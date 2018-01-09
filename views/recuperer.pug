@@ -32,7 +32,7 @@ html(lang="en")
              let token = response.authResponse.accessToken
              console.log(token)
             $.post({
-            url: 'https://visions-mtths.c9users.io/facebook',
+            url: 'https://visions-2-mtths.c9users.io/facebook',
             data:JSON.stringify({token: token
             }),
             dataType:'json',
@@ -74,10 +74,10 @@ html(lang="en")
     h1(class='center2') Récupérez vos données
     fb:login-button(class='centerButton' scope="public_profile,email,read_custom_friendlists,user_education_history,user_location,user_relationship_details,user_relationships,user_religion_politics,user_work_history,user_posts" onlogin="checkLoginState();")
     p
-    a(class='centerButton' href='https://visions-mtths.c9users.io/google') 
+    a(class='centerButton' href='/google') 
         button(class="buttonStyle") Google Drive
     p
-    a(class='centerButton' href='https://visions-mtths.c9users.io/twitter') 
+    a(class='centerButton' href='/twitter') 
         button(class="buttonStyle") Twitter
     p 
     p  

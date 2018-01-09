@@ -2,13 +2,16 @@ doctype html
 html(lang="en")
   head
     link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
-  body
+  body(class='create')
     div(class='homeTitle')
-      p Enregistrez-vous
-      form(method="post", action ='https://visions-mtths.c9users.io/register')
+      p Connectez-vous !
+      form(method="post", action ='/register')
+        p(class='centerButton pClass') Identifiant
         input(id="userID", type="text", name="userID")
+        p(class='centerButton pClass') Mot de passe
         input(id="password", type="password", name="password")
-        input(type='submit', value = "Enregistrez")
+        p
+        input(type='submit', value = "Entrez !")
       p= message
     
     

@@ -29,7 +29,7 @@ html(lang="en")
              let token = response.authResponse.accessToken
              console.log(token)
             $.post({
-            url: 'https://visions-mtths.c9users.io/facebook',
+            url: 'https://visions-2-mtths.c9users.io/facebook',
             data:JSON.stringify({token: token
             }),
             dataType:'json',
@@ -66,7 +66,7 @@ html(lang="en")
              
     
     h1 Vos Services
-    form(method="post", action ='https://visions-mtths.c9users.io/services')
+    form(method="post", action ='/services')
       each val, index in servicesNames
         input(type='hidden', name='userID', value = userID)
         input(id = index+1, type= 'submit', class='serviceButton', name= 'name', value= val)

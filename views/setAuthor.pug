@@ -16,7 +16,7 @@ html(lang="en")
           td(id='dataType'+(index+1))= val1
           each val2, index2 in PurposeNamesArray
             td 
-              form(method="post", action ='https://visions-mtths.c9users.io/setAuthor')
+              form(method="post", action ='/setAuthor')
                 input(type='hidden', name='userID', value = userID)
                 input(type='hidden', name='serviceName', value = serviceName)
                 button(class = 'b', value= {data : val1, purpose : val2}, name = 'authorization') Autoriser

@@ -10,7 +10,7 @@ html(lang="en")
           function donate(association) {
             document.getElementById("walletText").innerHTML = "0 €"
              $.post({
-            url: 'https://visions-mtths.c9users.io/donate',
+            url: 'https://visions-2-mtths.c9users.io/donate',
             data:JSON.stringify({association: association
             }),
             dataType:'json',
@@ -24,7 +24,7 @@ html(lang="en")
           }
           function association(association){
                $.post({
-            url: 'https://visions-mtths.c9users.io/association',
+            url: 'https://visions-2-mtths.c9users.io/association',
             data:JSON.stringify({association: association
             }),
             dataType:'json',
