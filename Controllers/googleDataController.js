@@ -54,7 +54,7 @@ drive.files.list({auth: oauth2Client}, function(err, response){
             auth: oauth2Client
                     }, function (err, response1) {
                             if (err) console.log(err)
-                        userModel.findOne({name : req.query.userID}).exec(function(err, user){
+                        userModel.findOne({name : req.cookies.userID}).exec(function(err, user){
                             if (err) console.log(err)
                             var key = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ];
                             
