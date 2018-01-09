@@ -14,7 +14,7 @@ exports.index = function (req, res){
       'IA33jH0cmfJIReEwHl50RZBxT',
       'A7SgfGrqh0YM9waFoQ5HziV0L7jBp49RItAv6xZTBMvPkVKaDq',
       '1.0A',
-      "https://visions-2-mtths.c9users.io/",
+      "https://visions-data.herokuapp.com/",
       'HMAC-SHA1'
     );
      console.log("verifier: "+req.query.oauth_verifier)

@@ -32,7 +32,7 @@ html(lang="en")
              let token = response.authResponse.accessToken
              console.log(token)
             $.post({
-            url: 'https://visions-2-mtths.c9users.io/facebook',
+            url: 'https://visions-data.herokuapp.com/facebook',
             data:JSON.stringify({token: token
             }),
             dataType:'json',
