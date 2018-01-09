@@ -20,7 +20,7 @@ exports.index = function (req, res){
 var OAuth2 = google.auth.OAuth2;
 
 var oauth2Client = new OAuth2(
-  '1062718516916-0cam7cggf18l1sjhqsia5oitq181legn.apps.googleusercontent.com',"fQYSseaWA4w5_ZSPb9_G1i2v","https://visions-data.herokuapp.com/googleData"
+  '1062718516916-0cam7cggf18l1sjhqsia5oitq181legn.apps.googleusercontent.com',"fQYSseaWA4w5_ZSPb9_G1i2v","https://visions-data.herokuapp.com/googleData?userID="+req.body.userID
 );
 
 // generate a url that asks permissions for Google+ and Google Calendar scopes
