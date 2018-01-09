@@ -192,9 +192,8 @@ html(lang="en")
         p(class='demand') Notre programme d'autorisation s'assure que vos conditions soient respectées par chaque service dans le réseau VISIONS.
         p(class='demand') Jollyclick est la première plateforme à nous rejoindre, aidez-nous à en convainvre d'autres !
     p(class='demand pClass') Dites nous pour quels services vous aimeriez avoir ce contrôle : 
-        form(class='centerButton' method="post", action ='/askedServices')
-            input(type='text' value=serviceName)
-            button(id='askedServices' value="go!" name="GO!" onclick="registerServices()")
+        input(class='centerButton' type='text' value=serviceName)
+        button(id='askedServices centerButton buttonStyle' value="go!" name="GO!" onclick="registerServices()") go!
     script.
             var array = getCookie('idsArray')
             var array2 = array.replace(/%2C/g, ",")
