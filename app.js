@@ -54,6 +54,10 @@ var AuthorizationModel = require('./Models/AuthorizationModel')*/
 
 var app = express();
 
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -131,12 +135,6 @@ autoIncrement.initialize(db);
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
-
-
-
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
 
 
 
