@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
+  body
+    h1 #{causeName}
+    p= description
+
+    p Voici les données dont ils ont besoin pour mener à bien leurs actions :
+    each val1 in DataPurposes
+      p= val1.data.name
+      p= val1.description
+      each val2 in userAvailableData
+        if(val2==val1.data.name)
+          form(action='/give'+val1.data.name, method='post')
+            input(type='submit', name='data', value='Transférez votre donnée')
+        else
+          p 'Vous n'avez pas encore cette donnée dans votre banque, récupérez la auprès des services que vous utilisez !
+

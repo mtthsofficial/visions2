@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
+  body
+    p maintenant explorez les différents serviceNames que vous utilisez tous les jours, découvrez les données qu'ils ont sur vous et récupérez les !
+    form(method="post", action ='https://visions-mtths.c9users.io/servicesSimulation/Facebook')
+      input(type='hidden', name = "idUser", value = idUser)
+      input(type='submit', name = "serviceName", value = "Facebook")
+    form(method="post", action ='https://visions-mtths.c9users.io/servicesSimulation/Uber')
+      input(type='hidden', name = "idUser", value = idUser)
+      input(type='submit', name = "serviceName", value = "Uber")
+    form(method="post", action ='https://visions-mtths.c9users.io/servicesSimulation/Google')
+      input(type='hidden', name = "idUser", value = idUser)
+      input(type='submit', name = "serviceName", value = "Google")
+    form(method="post", action ='https://visions-mtths.c9users.io/servicesSimulation/Tinder')
+      input(type='hidden', name = "idUser", value = idUser)
+      input(type='submit', name = "serviceName", value = "Tinder")
+    form(method="post", action ='https://visions-mtths.c9users.io/servicesSimulation/Netflix')
+      input(type='hidden', name = "idUser", value = idUser)
+      input(type='submit', name = "serviceName", value = "Netflix")
+    form(method="post", action ='https://visions-mtths.c9users.io/servicesSimulation/LinkedIn')
+      input(type='hidden', name = "idUser", value = idUser)
+      input(type='submit', name = "serviceName", value = "LinkedIn")
+
+    p Découvrez les données que vous avez récupérées et ce que vous pouvez en faire
+    form(method="post", action ='https://visions-mtths.c9users.io/dataBank')
+      input(type='hidden', name = "idUser", value = idUser)
+      input(type='submit', value = "DataBank")

@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css")
+
+
+  body(class="create")
+    div(class='createTitle')
+      p Enregistrez-vous
+      form(method="post", action ='https://visions-mtths.c9users.io/create')
+        p username
+        input(id="idUser", type="text", name="idUser")
+        p mail
+        input(id="email", type="text", name="email")
+        p password
+        input(id="password", type="password", name="password")
+        p
+        input(type='submit', value = "GO!")
+      p= message

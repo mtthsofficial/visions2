@@ -1,0 +1,471 @@
+#mainContent {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: xx-large;
+	font-weight: bold;
+	background-color: #E7F0FB;
+	border-radius: 10px;
+	padding: 30px;
+	text-align: center;
+}
+input{
+	border-radius: 90px;
+	border: thin solid #143556;
+	padding: 5px;
+	background-color: #143556;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: #E5F3F5;
+	width: 75px;
+}
+input:hover {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;}
+input:active {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+.buttonStyle {
+	border-radius: 90px;
+	border: thin solid #143556;
+	padding: 5px;
+	background-color: #143556;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: #E5F3F5;
+	width: auto
+}
+
+.buttonStyle2 {
+	border-radius: 90px;
+	border: thin solid #143556;
+	padding: 5px;
+	background-color: #143556;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: #E5F3F5;
+	width: 75px;
+	position:relative;
+	left:25%;
+}
+
+.buttonStyle:hover {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+
+.buttonStyle2:hover {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+.buttonStyle:active {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+
+
+.buttonStyle:visited {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+
+.buttonStyle2:visited {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+
+
+.button-clicked {
+	border-radius: 90px;
+	border: thin solid #143556;
+	padding: 5px;
+	background-color: #E5F3F5;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: #143556;
+	width: 75px;
+	position:relative;
+}
+
+.button-clicked:active {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+
+.button-clicked:hover {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+
+
+.button-clicked:focus {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+
+.button-clicked:visited {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+
+.buttonStyle2:active {
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+.body{
+
+    background-image: url("http://visionspol.eu/wp-content/uploads/2017/11/LOGO-01.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+	
+}
+th{
+	font-family : Futura;
+	text-transform : uppercase;
+	color: #E5F3F5;
+
+}
+td{
+	font-family : Futura;
+		text-transform : uppercase;
+		color: #E5F3F5;
+
+}
+p{
+	font-family : Futura;
+	color: #E5F3F5;
+	text-align : left;
+}
+
+h1{
+	font-family : Futura;
+	color: #E5F3F5;
+	text-align : left;
+}
+
+input[type="submit"]{
+ cursor:pointer;
+ border-radius: 90px;
+ border: thin solid #143556;
+ padding: 5px;
+ background-color: #143556;
+ font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+ font-weight: bold;
+ color: #E5F3F5;
+ width: 75px;
+}
+
+.bouton_submit{
+ cursor:pointer;
+ border-radius: 90px;
+ border: thin solid #143556;
+ padding: 5px;
+ background-color: #143556;
+ font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+ font-weight: bold;
+ color: #E5F3F5;
+ width: 75px;
+}
+ 
+.bouton_submit:hover{
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+ 
+.bouton_submit:active{
+	border: thin solid #E5F3F5;
+	background-color: #E5F3F5;
+	color: #143556;
+	cursor: pointer;
+}
+
+.img-circle {
+    border-radius: 20%;
+    width: 50px;
+	height: 50px;
+	position:relative;
+	left:22%;
+}
+
+.img-circle-association {
+    border-radius: 20%;
+    width: 50px;
+	height: 50px;
+	position:relative;
+	left:38%;
+}
+
+.pictosData {
+    width: 75px;
+	height: 120px;
+	position:relative;
+	left:23%;
+	margin:  0px 30px 0px 30px;
+}
+
+.brandText {
+text-indent:3em;
+position:relative;
+left:05%;	
+}
+
+.brandText2 {
+text-indent:3em;
+position:relative;
+left:00%;	
+}
+
+.brandText3 {
+text-indent:0em;
+text-align: center;
+position:relative;
+left:00%;	
+}
+
+.brandButton {
+position:relative;
+left:10%;
+}
+
+.brandButton2 {
+position:relative;
+left:0%;
+}
+
+.center {
+	position:relative;
+	left:30%;
+}
+
+.center2 {
+	position:relative;
+	left:37%;
+}
+
+.center4 {
+	position:relative;
+	left:23%;
+}
+
+.center3 {
+	position:relative;
+	left:33%;
+}
+
+.centerButton {
+	position:relative;
+	left:45%;
+}
+
+.home {
+  position: absolute;
+  top: 50%; /* poussé de la moitié de hauteur du référent */
+  left : 29%;
+  transform: translateY(-50%);
+}
+
+.homeTitle { 
+	font-family : Futura;
+	color: #143556;
+	text-align : center;
+	font-size: 50px;
+	position:relative;
+	left:0%;
+}
+
+.createTitle { 
+	font-family : Futura;
+	color: #143556;
+	font-size: 20px;
+	position:relative;
+	left:43%;
+}
+
+.navbar-brand {
+	font-family : Futura;
+    color : #143556;
+}
+
+.navbar {
+	background-color: #E5F3F5;
+	
+}
+
+.dataProfile {
+	position:relative;
+	left:20%;	
+}
+
+.authorTable {
+        border-collapse: separate;
+        border-spacing: 30px 8px; /* Nombre de pixels d'espace horizontal (5px), vertical (8px) */
+}
+
+.pTitle {
+	font-size: 20px;
+	position:relative;
+	left:40%;
+	
+}
+
+.pTitle2 {
+	font-size: 20px;
+	position:relative;
+	left:30%;
+	
+}
+
+.create {
+	background-image: url("http://visionspol.eu/wp-content/uploads/2018/01/inscription.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: 1500px 800px
+	
+}
+
+.controler {
+	background-image: url("http://visionspol.eu/wp-content/uploads/2018/01/control.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: 1500px 800px
+	
+}
+
+.data4good {
+	background-image: url("http://visionspol.eu/wp-content/uploads/2018/01/association.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: 1500px 800px	
+}
+
+
+.echanger {
+	background-image: url("http://visionspol.eu/wp-content/uploads/2018/01/echange.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: 1500px 800px	
+}
+
+.accueil {
+	background-image: url("http://visionspol.eu/wp-content/uploads/2018/01/accueil.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: 1500px 800px	
+}
+
+.recuperer {
+	background-image: url("http://visionspol.eu/wp-content/uploads/2018/01/data.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: 1500px 800px	
+}
+
+.brandBorder {
+ border-width:5px;
+ border-style:groove;
+ border-color:#E5F3F5;
+}
+
+.dataWallet { 
+	position: absolute; 
+	visibility: visible; 
+	left: 20px; top: 250px; 
+	height: 100px; width: 150px; 
+	z-index: 200; 
+	
+}
+
+.pictoWallet {
+	width: 180px;
+	height: 120px;
+}
+
+
+
+.money {
+	position: absolute; 
+	visibility: visible; 
+	left: 110px; top: 80px; 
+	color: #143556;
+	font-weight: bold;
+}
+
+.amnesty {
+	position: absolute; 
+	visibility: visible; 
+	left: 400px; top: 250px; 
+	height: 100px; width: 250px; 
+	z-index: 200; 	
+}
+
+.wwf {
+	position: absolute; 
+	visibility: visible; 
+	left: 700px; top: 250px; 
+	height: 100px; width: 250px; 
+	z-index: 200; 
+}
+
+.database {
+	position: absolute; 
+	visibility: visible; 
+	left: 50px; top: 350px; 
+	height: 150px; width: 250px; 
+	z-index: 200; 
+}
+
+.user {
+	position: absolute; 
+	visibility: visible; 
+	left: 400px; top: 350px; 
+	height: 150px; width: 250px; 
+	z-index: 200; 
+}
+
+.datawallet2 {
+	position: absolute; 
+	visibility: visible; 
+	left: 700px; top: 350px; 
+	height: 150px; width: 250px; 
+	z-index: 200; 
+}
+
+.charity {
+	position: absolute; 
+	visibility: visible; 
+	left: 1000px; top: 350px; 
+	height: 150px; width: 250px; 
+	z-index: 200; 
+}

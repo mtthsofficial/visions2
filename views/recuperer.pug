@@ -1,0 +1,91 @@
+doctype html
+html(lang="en") 
+  head
+    link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  body(class="recuperer")
+    script.
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '168416127095686',
+          xfbml      : true,
+          version    : 'v2.11'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+       
+       
+        function statusChangeCallback(response) {
+          console.log('statusChangeCallback');
+          console.log("client"+response);
+
+          if (response.status === 'connected') {
+             let token = response.authResponse.accessToken
+             console.log(token)
+            $.post({
+            url: 'https://visions-mtths.c9users.io/facebook',
+            data:JSON.stringify({token: token
+            }),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             console.log('SUCCESS!!!')
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })} else {
+            // The person is not logged into your app or we are unable to tell.
+            document.getElementById('status').innerHTML = 'Please log ' +
+              'into this app.';
+          }
+        }
+      
+        // This function is called when someone finishes with the Login
+        // Button.  See the onlogin handler attached to it in the sample
+        // code below.
+        function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+        }
+
+      
+        function testAPI() {
+          console.log('Welcome!  Fetching your information.... ');
+          FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+
+          });
+        }
+    nav(class="navbar navbar-toggleable-md navbar-light bg-faded")
+      a(class="navbar-brand" href="/recuperer") DataBank
+      a(class="navbar-brand" href="/controler") DataProfile
+      a(class="navbar-brand" href="/echanger") DataWallet
+      a(class="navbar-brand" href="/data4good") Data4Good         
+    h1(class='center2') Récupérez vos données
+    fb:login-button(class='centerButton' scope="public_profile,email,read_custom_friendlists,user_education_history,user_location,user_relationship_details,user_relationships,user_religion_politics,user_work_history,user_posts" onlogin="checkLoginState();")
+    p
+    a(class='centerButton' href='https://visions-mtths.c9users.io/google') 
+        button(class="buttonStyle") Google Drive
+    p
+    a(class='centerButton' href='https://visions-mtths.c9users.io/twitter') 
+        button(class="buttonStyle") Twitter
+    p 
+    p  
+    p  
+    p   
+    h1(class="center3") DataBank, vos données disponibles 
+    p= message
+    each val in userDatas
+        img(class="pictosData" src= val)
+        
+    

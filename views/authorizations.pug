@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
+  body
+    p Voici les autorisations que vos utilisateurs vous ont donné
+    each val, index in authorizationsArray
+        p User : #{val.user}
+        each val2, index in val.data
+            p Data : #{val2}
+                each val3 in val.purposes[index]
+                    p Purpose : #{val3}

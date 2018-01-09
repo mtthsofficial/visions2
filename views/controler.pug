@@ -1,0 +1,188 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  body(class="controler")
+    script.
+        var array = getCookie('idsArray')
+        var array2 = array.replace(/%2C/g, ",")
+        console.log(array2) 
+        
+        function getCookie(name) {
+              var value = "; " + document.cookie;
+              var parts = value.split("; " + name + "=");
+              if (parts.length == 2) return parts.pop().split(";").shift();
+            }
+        
+        
+        function setAuthor(){
+            var array = getCookie('idsArray')
+            var array2 = array.replace(/%2C/g, ",")
+            var stringArray = array2.split(",")
+            console.log(stringArray)
+            
+            for(let i=0; i<stringArray.length; i++){
+                console.log($('#16').attr("class"))
+                $('#'+stringArray[i]).removeClass("buttonStyle").addClass('button-clicked')
+                
+            }
+            
+        }
+        
+        function authorize(purpose, data, id){
+        
+            if($('#'+id).attr("class") === "buttonStyle" || $('#'+id).attr("class") === "buttonStyle2" ){
+            $('#'+id).removeClass("buttonStyle").addClass('button-clicked')
+
+            $.post({
+            url: 'https://visions-mtths.c9users.io/authorize',
+            data:JSON.stringify({"purpose": purpose, "data" : data}),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })}
+          else {
+              $('#'+id).removeClass("button-clicked").addClass("buttonStyle")
+
+            $.post({
+            url: 'https://visions-mtths.c9users.io/authorize',
+            data:JSON.stringify({"purpose": purpose, "data" : data, "state" : "out"}),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
+          }
+          
+          
+        }
+    nav(class="navbar navbar-toggleable-md navbar-light bg-faded")
+      a(class="navbar-brand" href="/recuperer") DataBank
+      a(class="navbar-brand" href="/controler") DataProfile
+      a(class="navbar-brand" href="/echanger") DataWallet
+      a(class="navbar-brand" href="/data4good") Data4Good
+    h1 Contrôler vos données
+    p(class="pTitle") Créez votre DataProfile 
+    div(class="dataProfile")
+        table(class="authorTable" id ='authorTable')
+            tr(id='Purposes')
+                th(id='idAgent') DataProfile
+                th Personnalisation
+                th Publicité
+                th Recherche
+                th Marketing
+                th Revente
+                
+            tr(id='row'+(index1+1))
+                td Email
+                    td
+                        button(id="1" class="buttonStyle2" onclick="authorize(0,3,1)" value="Email") Autoriser 
+                    td
+                        button(id="2" class="buttonStyle" onclick="authorize(3,3,2)" value="Email") Autoriser
+                    td
+                        button(id="3" class="buttonStyle" onclick="authorize(2,3,3)" value="Email") Autoriser
+                    td
+                        button(id="4" class="buttonStyle" onclick="authorize(1,3,4)" value="Email") Autoriser
+                    td
+                        button(id="5" class="buttonStyle" onclick="authorize(4,3,5)" value="Email") Autoriser
+            tr(id='row'+(index1+1))
+                td Bancaires
+                    td
+                        button(id="6" class="buttonStyle2" onclick="authorize(0,0,6)" value="Payement") Autoriser 
+                    td
+                        button(id="7" class="buttonStyle" onclick="authorize(3,0,7)" value="Payement") Autoriser
+                    td
+                        button(id="8" class="buttonStyle" onclick="authorize(2,0,8)" value="Payement") Autoriser
+                    
+                    td
+                        button(id="9" class="buttonStyle" onclick="authorize(1,0,9)" value="Payement") Autoriser
+                    td
+                        button(id="10" class="buttonStyle" onclick="authorize(4,0,10)" value="Payement") Autoriser
+            tr(id='row'+(index1+1))
+                td Famille
+                    td
+                        button(id="11" class="buttonStyle2" onclick="authorize(0,1,11)" value="Famille") Autoriser 
+                    td
+                        button(id="12" class="buttonStyle" onclick="authorize(3,1,12)" value="Famille") Autoriser
+                    td
+                        button(id="13" class="buttonStyle" onclick="authorize(2,1,13)" value="Famille") Autoriser
+                    td
+                        button(id="14" class="buttonStyle" onclick="authorize(1,1,14)" value="Famille") Autoriser
+                    td
+                        button(id="15" class="buttonStyle" onclick="authorize(4,1,15)" value="Famille") Autoriser
+            tr(id='row'+(index1+1))
+                td Amis
+                    td
+                        button(id="16" class="buttonStyle2" onclick="authorize(0,2,16)" value="Amis") Autoriser
+                    td
+                        button(id="17" class="buttonStyle" onclick="authorize(3,2,17)" value="Amis") Autoriser
+                    td
+                        button(id="18" class="buttonStyle" onclick="authorize(2,2,18)" value="Amis") Autoriser
+                    td
+                        button(id="19" class="buttonStyle" onclick="authorize(1,2,19)" value="Amis") Autoriser
+                    td
+                        button(id="20" class="buttonStyle" onclick="authorize(4,2,20)" value="Amis") Autoriser
+            tr(id='row'+(index1+1))
+                td Emploi
+                    td
+                        button(id="21" class="buttonStyle2" onclick="authorize(0,4,21)" value="Emploi") Autoriser
+                    td
+                        button(id="22" class="buttonStyle" onclick="authorize(3,4,22)" value="Emploi") Autoriser
+                    td
+                        button(id="23" class="buttonStyle" onclick="authorize(2,4,23)" value="Emploi") Autoriser
+                    
+                    td
+                        button(id="24" class="buttonStyle" onclick="authorize(1,4,24)" value="Emploi") Autoriser
+                    td
+                        button(id="25" class="buttonStyle" onclick="authorize(4,4,25)" value="Emploi") Autoriser
+            tr(id='row'+(index1+1))
+                td Adresse
+                    td
+                        button(id="26" class="buttonStyle2" onclick="authorize(0,5,26)" value="Adresse") Autoriser 
+                    td
+                        button(id="27" class="buttonStyle" onclick="authorize(3,5,27)" value="Adresse") Autoriser
+                    td
+                        button(id="28" class="buttonStyle" onclick="authorize(2,5,28)" value="Adresse") Autoriser
+                    
+                    td
+                        button(id="29" class="buttonStyle" onclick="authorize(1,5,29)" value="Adresse") Autoriser
+                    td
+                        button(id="30" class="buttonStyle" onclick="authorize(4,5,30)" value="Adresse") Autoriser
+            tr(id='row'+(index1+1))
+                td Education
+                    td
+                        button(id="31" class="buttonStyle2" onclick="authorize(0,6,31)" value="Education") Autoriser 
+                    td
+                        button(id="32" class="buttonStyle" onclick="authorize(3,6,32)" value="Education") Autoriser
+                    td
+                        button(id="33" class="buttonStyle" onclick="authorize(2,6,33)" value="Education") Autoriser
+                    td
+                        button(id="34" class="buttonStyle" onclick="authorize(1,6,34)" value="Education") Autoriser
+                    td
+                        button(id="35" class="buttonStyle" onclick="authorize(4,6,35)" value="Education") Autoriser
+        p(class='demand') Notre programme d'autorisation s'assure que vos conditions soient respectées par chaque service dans le réseau VISIONS.
+        p(class='demand') Jollyclick est la première plateforme à nous rejoindre, aidez-nous à en convainvre d'autres !
+        p(class='demand') Dites nous pour quels services vous aimeriez avoir ce contrôle : 
+        form(method="post", action ='https://visions-mtths.c9users.io/askedServices')
+            input(type='text' value=serviceName)
+            input(type='submit' value="go!" name="GO!")
+    script.
+            var array = getCookie('idsArray')
+            var array2 = array.replace(/%2C/g, ",")
+            var stringArray = array2.split(",")
+            console.log(stringArray)
+            
+            for(let i=0; i<stringArray.length; i++){
+                console.log($('#16').attr("class"))
+                $('#'+stringArray[i]).removeClass("buttonStyle").addClass('button-clicked')
+                
+            }

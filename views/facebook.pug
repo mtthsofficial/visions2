@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  body
+    script.
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '168416127095686',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v2.11'
+        });
+        FB.AppEvents.logPageView();
+      };
+    
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+       
+        function statusChangeCallback(response) {
+          console.log('statusChangeCallback');
+          console.log("client"+response);
+
+          if (response.status === 'connected') {
+             let token = response.authResponse.accessToken
+             console.log(token)
+            $.post({
+            url: 'https://visions-mtths.c9users.io/facebook',
+            data:JSON.stringify({token: token
+            }),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })} else {
+            // The person is not logged into your app or we are unable to tell.
+            document.getElementById('status').innerHTML = 'Please log ' +
+              'into this app.';
+          }
+        }
+      
+        // This function is called when someone finishes with the Login
+        // Button.  See the onlogin handler attached to it in the sample
+        // code below.
+        function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+        }
+      
+        function testAPI() {
+          console.log('Welcome!  Fetching your information.... ');
+          FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+
+          });
+        }
+             
+    
+    fb:login-button(scope="public_profile,email,read_custom_friendlists,user_education_history,user_location,user_relationship_details,user_relationships,user_religion_politics,user_work_history,user_posts" onlogin="checkLoginState();")
+
+

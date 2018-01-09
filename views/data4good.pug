@@ -1,0 +1,74 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+
+    body(class="data4good")
+        script.
+          function donate(association) {
+            document.getElementById("walletText").innerHTML = "0 €"
+             $.post({
+            url: 'https://visions-mtths.c9users.io/donate',
+            data:JSON.stringify({association: association
+            }),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
+          }
+          function association(association){
+               $.post({
+            url: 'https://visions-mtths.c9users.io/association',
+            data:JSON.stringify({association: association
+            }),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
+              
+          }
+        nav(class="navbar navbar-toggleable-md navbar-light bg-faded")
+          a(class="navbar-brand" href="/recuperer") DataBank
+          a(class="navbar-brand" href="/controler") DataProfile
+          a(class="navbar-brand" href="/echanger") DataWallet
+          a(class="navbar-brand" href="/data4good") Data4Good
+        h1 Echangez & Revendez
+        div(class='dataWallet')
+          img(class = 'pictoWallet' src='/images/datawallet.png')
+          input(id="wallet" type="hidden" value = wallet)
+          p(id="walletText" class="money") #{wallet} € 
+        p
+        h1(class="center4") Voici des associations qui pourraient bénéficier de vos dons :
+        p(class='center') Faites vos dons à celle qui vous parle le plus et voyons combien nous pouvons collecter !
+        
+        div(class='amnesty')
+          img(class="img-circle-association" src="https://www.logodesignlove.com/images/classic/amnesty-logo-01.jpg")
+          p(class='brandText3') Amnesty International a besoin de vos données pour servir sa cause : 
+          p(class='brandText3') elle pourrait utiliser votre emploi, votre religion, votre adresse pour faire de meilleures études.
+          p Total des dons : #{donations1} €
+          p Transferts de données : #{persons1}
+          button(class='brandButton2 buttonStyle' onclick='donate("Amnesty")') Faire un don depuis son Wallet
+          button(class='brandButton buttonStyle' onclick='association("Amnesty")') Transférer ses données
+          p
+          p
+        div(class='wwf')
+          img(class="img-circle-association" src="https://upload.wikimedia.org/wikipedia/fr/thumb/2/24/WWF_logo.svg/1200px-WWF_logo.svg.png")
+          p(class='brandText3') WWF a besoin de vos données pour servir sa cause : 
+          p(class='brandText3') elle pourrait utiliser vos données de déplacement pour proposer des actions afin de réduire la pollution.
+          p Total des dons : #{donations2} €
+          p Transferts de données : #{persons2}
+          button(class='brandButton2 buttonStyle' onclick='donate("WWF")') Faire un don depuis son Wallet
+          button(class='brandButton buttonStyle' onclick='association("WWF")') Transférer ses données
+
+          
+          

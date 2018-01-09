@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css")
+
+  body
+    nav(class="navbar navbar-toggleable-md navbar-light bg-faded")
+      a(class="navbar-brand" href="/recuperer") DataBank
+      a(class="navbar-brand" href="/controler") DataProfile
+      a(class="navbar-brand" href="/echanger") DataWallet
+      a(class="navbar-brand" href="/data4good") Data4Good
+    h1 Voici les différentes données que vous avez récupéré dans vos services :
+    form(method="post", action ='https://visions-mtths.c9users.io/dataUses')
+      each val in availableData
+        input(type='submit', name='data', value=val) 
+    p Cliquez dessus pour découvrir toutes les utilisations que l'on peut faire de ses données !
+
+

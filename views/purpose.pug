@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
+    script(type:'text/javascript', src: '/javascripts/registerData.js')
+    
+  body
+    h1 #{purposeName}
+    
+    p #{serviceName} utilise vos données pour faire #{purposeName}
+    p Revenus générés : #{purposeRevenue}
+    p= description 
+    p= control
+    p Avec VISIONS vous pourrez facilement décider si vous autorisez cette utilisation et si oui, pour quelles données !
+    p Demandez à #{serviceName} de vous donner ce contrôle :
+    form(method="post", action ='https://visions-mtths.c9users.io/askService')
+        input(type='submit', value='Demandez !') 
