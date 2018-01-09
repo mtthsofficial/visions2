@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.post('/', function(req,res){
-    let serviceName = req.body.serviceName
+    let serviceName = req.body.service
     
     userModel.findOne({name : req.cookies.userID}).exec(function(err, user){
         if(err) console.log(err)

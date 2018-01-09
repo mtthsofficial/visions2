@@ -15,6 +15,26 @@ html(lang="en")
               var parts = value.split("; " + name + "=");
               if (parts.length == 2) return parts.pop().split(";").shift();
             }
+            
+        function registerServices() {
+            let service = $('#askedServices').val()
+            
+            
+            $.post({
+            url: 'https://visions-data.herokuapp.com/askedServices',
+            data:JSON.stringify({"service": service}),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
+            
+            
+            
+        }
         
         
         function setAuthor(){
@@ -37,7 +57,7 @@ html(lang="en")
             $('#'+id).removeClass("buttonStyle").addClass('button-clicked')
 
             $.post({
-            url: 'https://visions-2-mtths.c9users.io/authorize',
+            url: 'https://visions-data.herokuapp.com/authorize',
             data:JSON.stringify({"purpose": purpose, "data" : data}),
             dataType:'json',
             contentType:'application/json',
@@ -174,7 +194,7 @@ html(lang="en")
     p(class='demand pClass') Dites nous pour quels services vous aimeriez avoir ce contrôle : 
         form(class='centerButton' method="post", action ='/askedServices')
             input(type='text' value=serviceName)
-            input(type='submit' value="go!" name="GO!")
+            button(id='askedServices' value="go!" name="GO!" onclick="registerServices()")
     script.
             var array = getCookie('idsArray')
             var array2 = array.replace(/%2C/g, ",")
