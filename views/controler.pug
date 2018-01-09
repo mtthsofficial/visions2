@@ -194,7 +194,7 @@ html(lang="en")
     p(class='demand pClass') Dites nous pour quels services vous aimeriez avoir ce contrôle : 
         form(class='centerButton')
             input(class='centerButton' type='text' value=serviceName)
-            button(id='askedServices centerButton buttonStyle' value="go!" name="GO!" onclick="registerServices()") go!
+            button(id='askedServices' class='centerButton buttonStyle' value="go!" name="GO!" onclick="registerServices()") go!
     script.
             var array = getCookie('idsArray')
             var array2 = array.replace(/%2C/g, ",")
