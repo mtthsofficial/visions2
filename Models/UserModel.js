@@ -8,14 +8,15 @@ var User = require('../Models/UserModel');
 var async = require('async');
 var SchemaTypes = mongoose.Schema.Types;
 require('mongoose-double')(mongoose)
+var uniqueValidator = require('mongoose-unique-validator');
 
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({ 
-    name :String,
+    name : {type : String, required : true, unique : true},
     password: String,
     userNames :{Jollyclick : String, Test : String},
-    email: String, 
+    email: {type : String, required : true, unique : true}, 
     services: [{type: Schema.ObjectId, ref: 'Service'}],
     infoServices: [{type:[String]}],
     authorizations : [{type: Schema.ObjectId, ref: 'Authorization'}],
@@ -426,6 +427,8 @@ userSchema.methods.setAuthorization = function(idUser, rowIndex, cellIndex, serv
     user.save()
     
 }
+
+userSchema.plugin(uniqueValidator)
 
 mongoose.model('User', userSchema)
 

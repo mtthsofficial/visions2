@@ -815,6 +815,7 @@
       "version": "1.0.1"
     },
     "mongoose-type-mail": "^1.0.0",
+    "mongoose-unique-validator": "^1.0.6",
     "morgan": "^1.9.0",
     "mpath": {
       "integrity": "sha1-elj3iem1/TyUUgY0FXlg8mvV70Q=",

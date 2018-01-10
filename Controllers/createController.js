@@ -15,7 +15,7 @@ if(regex.test(email)){
 bcrypt.hash(pw, 10, function(err, hash) {
     if (err) console.log(err)
     User.create({name : idUser, password : hash, email : email}, function (err, user){
-        if (err) console.log(err)
+        if (err) {res.render('create', {message : "Nom d'utilisateur ou email déjà renseigné !"})}
         user.Wallet = 0.0
         user.save()
         res.cookie("userID", idUser).render('accueil')
