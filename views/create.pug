@@ -8,13 +8,13 @@ html(lang="en")
   body(class="create")
     div(class='createTitle')
       p Enregistrez-vous
-      form(method="post", action ='/create')
-        p username
-        input(class='centerButton pClass' id="idUser", type="text", name="idUser")
-        p mail
-        input(class='centerButton pClass' id="email", type="text", name="email")
-        p password
-        input(class='centerButton pClass' id="password", type="password", name="password")
-        p
-        input(type='submit', value = "GO!")
+    form(method="post", action ='/create')
+      p username
+      input(class='centerButton pClass' id="idUser", type="text", name="idUser")
+      p mail
+      input(class='centerButton pClass' id="email", type="text", name="email")
+      p password
+      input(class='centerButton pClass' id="password", type="password", name="password")
+      p
+      input(type='submit', value = "GO!")
       p= message
