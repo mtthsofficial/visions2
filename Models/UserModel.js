@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-require('mongoose-type-email');
 var Data = require("../Models/DataModel");
 var Purpose = require("../Models/PurposeModel");
 var Service = require('../Models/ServiceModel');
