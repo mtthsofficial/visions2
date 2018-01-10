@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
+require('mongoose-type-email');
 var Data = require("../Models/DataModel");
 var Purpose = require("../Models/PurposeModel");
 var Service = require('../Models/ServiceModel');
 var DataPurpose = require('../Models/DataPurposeModel');
 var Authorization = require('../Models/AuthorizationModel');
-var User = require('../Models/UserModel')
-const Email = require('mongoose-type-mail');
+var User = require('../Models/UserModel');
 var async = require('async');
 var SchemaTypes = mongoose.Schema.Types;
 require('mongoose-double')(mongoose)
@@ -16,11 +16,7 @@ var userSchema = new Schema({
     name :String,
     password: String,
     userNames :{Jollyclick : String, Test : String},
-    email: {
-    type: Email,
-    //required: [true, 'email is required'],
-    unique: [true, 'this email is already used'] 
-  }, 
+    email: String, 
     services: [{type: Schema.ObjectId, ref: 'Service'}],
     infoServices: [{type:[String]}],
     authorizations : [{type: Schema.ObjectId, ref: 'Authorization'}],

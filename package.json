@@ -1059,6 +1059,7 @@
       "resolved": "https://registry.npmjs.org/raw-body/-/raw-body-2.3.2.tgz",
       "version": "2.3.2"
     },
+    "regex-email": "^1.0.2",
     "regexp-clone": {
       "integrity": "sha1-p8LgmJH9vzj7sQ03b7cwA+aKxYk=",
       "resolved": "https://registry.npmjs.org/regexp-clone/-/regexp-clone-0.0.1.tgz",
