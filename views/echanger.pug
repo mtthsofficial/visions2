@@ -23,7 +23,7 @@ html(lang="en")
             document.getElementById("walletText").innerHTML = total+"€"
             
              $.post({
-            url: 'https://visions-2-mtths.c9users.io/pay',
+            url: 'https://visions-data.herokuapp.com/pay',
             data:JSON.stringify({sum : sum, service : service}),
             dataType:'json',
             contentType:'application/json',
