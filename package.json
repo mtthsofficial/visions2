@@ -1301,6 +1301,7 @@
       "resolved": "https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz",
       "version": "1.0.2"
     },
+    "unless": "^0.1.1",
     "unpipe": {
       "integrity": "sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=",
       "resolved": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz",
