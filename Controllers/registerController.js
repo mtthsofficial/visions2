@@ -13,28 +13,20 @@ let pw = req.body.password;
 
     var servicesNames = []
 
-User.findOne({name : userID}).populate('services').exec(function (err, user){
+User.findOne({name : userID}).exec(function (err, user){
     
     if (err) console.log(err)
     //check if user exists
     if (user == null) {res.render('Register', {message : 'Wrong ID or password!'});}
     //just for test purposes (didnt hash the test user)
-    if (userID == 'testuser'){for (let i=0; i<user.services.length; i++){
-        
-        servicesNames.push(user.services[i].name)
-    }
-    res.cookie("userID", userID).render('accueil')}
     else{
     bcrypt.compare(pw, user.password, function(err, crypt) {
          if (err) console.log(err)
   if(crypt) {
-  for (let i=0; i<user.services.length; i++){
-        
-        servicesNames.push(user.services[i].name)
-    }
+
     res.cookie("userID", userID).render('accueil')}
   else {
-res.cookie("userID", userID).render('accueil')
+  res.render('Register', {message : 'Wrong ID or password!'})
   } 
 });
     

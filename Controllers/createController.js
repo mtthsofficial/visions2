@@ -13,10 +13,10 @@ let email = req.body.email;
 bcrypt.hash(pw, 10, function(err, hash) {
     if (err) console.log(err)
     User.create({name : idUser, password : hash, email : email}, function (err, user){
-        if (err) {res.render('create', {message : err});}
+        if (err) {res.render('create', {message : 'Email invalide !'});}
         user.Wallet = 0.0
         user.save()
-    res.cookie("userID", idUser).render('accueil')
+        res.cookie("userID", idUser).render('accueil')
     })
     
 });
