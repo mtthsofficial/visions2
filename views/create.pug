@@ -10,11 +10,11 @@ html(lang="en")
       p Enregistrez-vous
       form(method="post", action ='/create')
         p username
-        input(id="idUser", type="text", name="idUser")
+        input(class='centerButton pClass' id="idUser", type="text", name="idUser")
         p mail
-        input(id="email", type="text", name="email")
+        input(class='centerButton pClass' id="email", type="text", name="email")
         p password
-        input(id="password", type="password", name="password")
+        input(class='centerButton pClass' id="password", type="password", name="password")
         p
         input(type='submit', value = "GO!")
       p= message
