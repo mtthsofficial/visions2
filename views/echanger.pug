@@ -50,7 +50,9 @@ html(lang="en")
         div(class='center')
           img(class="img-circle" src="https://lh3.googleusercontent.com/wzRmvVkGHIcesj89tTVyAfmrWXyChlsxDznUpWX__aoTTZup6zvvKKAkzfi6Yexz6lA=w300")
           p(class='brandText') Meetic souhaite acheter vos données pour des études marketing
-          if payed1
+          if noData
+             p(class='brandText') Vous n'avez pas de données à échanger
+          else if payed1
             p(class='brandText') Vous avez déjà échangé ces données
           else
             p(class='brandText') Gain : 0,40 €
@@ -60,7 +62,9 @@ html(lang="en")
             
           img(class="img-circle" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png")
           p(class='brandText') Instagram souhaite acheter vos données à des fins publicitaires (publicité ciblée)
-          if payed2
+          if noData
+             p(class='brandText') Vous n'avez pas de données à échanger
+          else if payed2
             p(class='brandText') Vous avez déjà échangé ces données
           else
             p(class='brandText') Gain : 0,60 €
@@ -70,7 +74,9 @@ html(lang="en")
          
           img(class="img-circle" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/LIP6.gif/225px-LIP6.gif")
           p(class='brandText') Le laboratoire de Paris 6 afin d'entraîner des systèmes d'intelligence artificielle
-          if payed3
+          if noData
+             p(class='brandText') Vous n'avez pas de données à échanger
+          else if payed3
             p(class='brandText') Vous avez déjà échangé ces données
           else
             p(class='brandText') Gain : 0,20 €
