@@ -12,13 +12,18 @@ let pw = req.body.password;
 let email = req.body.email;
 if(regex.test(email)){
 
+let error = false;
+
 bcrypt.hash(pw, 10, function(err, hash) {
     if (err) console.log(err)
     User.create({name : idUser, password : hash, email : email}, function (err, user){
-        if (err) {res.render('create', {message : "Nom d'utilisateur ou email déjà renseigné !"})}
+        if (err) {error=true}
+        
+        if(error){res.render('create', {message : "Nom d'utilisateur ou email déjà renseigné !"})}
+    else{    
         user.Wallet = 0.0
         user.save()
-        res.cookie("userID", idUser).render('accueil')
+        res.cookie("userID", idUser).render('accueil')}
     })
     
 });}
