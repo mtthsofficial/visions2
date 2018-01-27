@@ -36,32 +36,32 @@ var userSchema = new Schema({
                 GoogleDriveData : [],
                 
                 Personnel : {
-                    Birthday : " ",
-                    Address : " ",
-                    Gender : " "
+                    Birthday : { type: String, default: " "},
+                    Address : { type: String, default: " "},
+                    Gender : { type: String, default: " "}
                 },
                 Professionnel : {
-                    EducationLevel : " ",
+                    EducationLevel : { type: String, default: " "},
                     SchoolsAttended : [],
                     Fields : [],
                     PreviousWorks : [],
-                    CurrentWork : " ",
-                    Salary : " "
+                    CurrentWork : { type: String, default: " "},
+                    Salary : { type: String, default: " "}
                 },
                 Intime : {
-                    Family : " ",
-                    Kids : " ",
-                    Sexuality : " ",
-                    LeasureSpendings : " ",
-                    CommoditySpendings : " ",
+                    Family : { type: String, default: " "},
+                    Kids : { type: String, default: " "},
+                    Sexuality : { type: String, default: " "},
+                    LeasureSpendings : { type: String, default: " "},
+                    CommoditySpendings : { type: String, default: " "},
                     Hobbies : [],
                     Sports : [],
-                    Smoking : " ",
-                    Weight : " ",
-                    Religion : " ",
-                    MovieFav : " ",
-                    BookFav : " ",
-                    DocFreq : " "
+                    Smoking : { type: String, default: " "},
+                    Weight : { type: String, default: " "},
+                    Religion : { type: String, default: " "},
+                    MovieFav : { type: String, default: " "},
+                    BookFav : { type: String, default: " "},
+                    DocFreq : { type: String, default: " "}
                 }
     },
     Preferences : {
