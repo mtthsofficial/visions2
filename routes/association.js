@@ -13,7 +13,7 @@ router.post('/', function(req, res){
      user.Associations.push(req.body.association)
      user.save()
         
-  unless(user.Data.FacebookWork.length==0 && user.Data.FacebookEducation.length==0 && user.Data.FacebookPosts.length==0 && user.Data.TwiiterPosts.length==0 && user.Data.GoogleDriveData.length==0, function (){ 
+  unless(user.Data.FacebookWork.length==0 && user.Data.FacebookEducation.length==0 && user.Data.FacebookPosts.length==0 && user.Data.TwiiterPosts.length==0 && user.Data.GoogleDriveData.length==0 && user.Data.avalaible ==false, function (){ 
     
     associationModel.findOne({name : req.body.association}).exec(function(err, asso){
         if(err) console.log(err)

@@ -36,32 +36,32 @@ var userSchema = new Schema({
                 GoogleDriveData : [],
                 
                 Personnel : {
-                    Birthday : String,
-                    Address : String,
-                    Gender : String
+                    Birthday : " ",
+                    Address : " ",
+                    Gender : " ""
                 },
                 Professionnel : {
-                    EducationLevel : String,
+                    EducationLevel : " ",
                     SchoolsAttended : [],
                     Fields : [],
                     PreviousWorks : [],
-                    CurrentWork : String,
-                    Salary : String
+                    CurrentWork : " ",
+                    Salary : " "
                 },
                 Intime : {
-                    Family : String,
-                    Kids : Number,
-                    Sexuality : String,
-                    LeasureSpendings : String,
-                    CommoditySpendings : String,
+                    Family : " ",
+                    Kids : " ",
+                    Sexuality : " ",
+                    LeasureSpendings : " ",
+                    CommoditySpendings : " ",
                     Hobbies : [],
                     Sports : [],
-                    Smoking : String,
-                    Weight : String,
-                    Religion : String,
-                    MovieFav : String,
-                    BookFav : String,
-                    DocFreq : String
+                    Smoking : " ",
+                    Weight : " ",
+                    Religion : " ",
+                    MovieFav : " ",
+                    BookFav : " ",
+                    DocFreq : " "
                 }
     },
     Preferences : {
