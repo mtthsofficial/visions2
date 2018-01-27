@@ -11,7 +11,7 @@ User.findOne({name : req.cookies.userID}).exec(function(err, user){
     if(err) console.log(err)
 
 if(user.Data.FacebookWork.length==0 && user.Data.FacebookEducation.length==0 && user.Data.FacebookPosts.length==0 && user.Data.TwiiterPosts.length==0 && user.Data.GoogleDriveData.length==0 && user.Data.Personnel.Address==null && user.Data.Personnel.Gender==null && user.Data.Personnel.Birthday==null && user.Data.Professionnel.EducationLevel==null && user.Data.Professionnel.CurrentWork==null && user.Data.Professionnel.SchoolsAttended.length==0 && user.Data.Intime.Family==null && user.Data.Intime.Sexuality==null  && user.Data.Intime.Smoking==null && user.Data.Intime.MovieFav==null && user.Data.Intime.BookFav==null && user.Data.Intime.Religion==null) {
-    res.render('dataBank2')
+    res.render('dataBank2') 
 }
 
 
