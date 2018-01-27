@@ -13,6 +13,8 @@ var facebook = require('./routes/facebook');
 var authorizations = require('./routes/authorizations');
 var users = require('./routes/users');
 var echanger = require('./routes/echanger');
+var stock = require('./routes/stock');
+var dataBank = require('./routes/dataBank');
 var pay = require('./routes/pay');
 var donate = require('./routes/donate');
 var askedServices = require('./routes/askedServices');
@@ -27,7 +29,6 @@ var recuperer = require('./routes/recuperer')
 var accueil = require('./routes/accueil')
 var services = require("./routes/services")
 var setAuthor = require("./routes/setAuthor")
-var dataBank = require("./routes/dataBank") 
 var twitter = require("./routes/twitter") 
 var purpose = require("./routes/purpose") 
 var controler = require("./routes/controler") 
@@ -73,6 +74,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', home);
 app.use('/facebook', facebook);
+app.use('/stock', stock);
 app.use('/authorizations', authorizations);
 app.use('/askData', askData);
 app.use('/displayUserData', displayUserData);

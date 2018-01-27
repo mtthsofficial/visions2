@@ -15,7 +15,8 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({ 
     name : {type : String, required : true, unique : true},
     password: String,
-    userNames :{Jollyclick : String, Test : String},
+    Jollyclick : String,
+    Kawaa : String,
     email: {type : String, required : true, unique : true}, 
     services: [{type: Schema.ObjectId, ref: 'Service'}],
     infoServices: [{type:[String]}],
@@ -31,7 +32,35 @@ var userSchema = new Schema({
                 FacebookEducation : [], 
                 FacebookPosts : [],
                 TwiiterPosts : [],
-                GoogleDriveData : []
+                GoogleDriveData : [],
+                Personnel : {
+                    Birthday : {type : Date},
+                    Address : String,
+                    Gender : String
+                },
+                Professionnel : {
+                    EducationLevel : String,
+                    SchoolsAttended : [],
+                    Fields : [],
+                    PreviousWorks : [],
+                    CurrentWork : String,
+                    Salary : Number
+                },
+                Intime : {
+                    Family : String,
+                    Kids : Number,
+                    Sexuality : String,
+                    LeasureSpendings : Number,
+                    CommoditySpendings : Number,
+                    Hobbies : [],
+                    Sports : [],
+                    Smoking : Boolean,
+                    Weight : Number,
+                    Religion : String,
+                    MovieFav : String,
+                    BookFav : String,
+                    DocFreq : Number
+                }
     },
     Preferences : {
         Personnalisation : [],
