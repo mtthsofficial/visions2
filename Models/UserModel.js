@@ -36,32 +36,32 @@ var userSchema = new Schema({
                 GoogleDriveData : [],
                 
                 Personnel : {
-                    Birthday : { type: String, default: " "},
-                    Address : { type: String, default: " "},
-                    Gender : { type: String, default: " "}
+                    Birthday : { type: String, default: "lol"},
+                    Address : { type: String, default: "lol"},
+                    Gender : { type: String, default: "lol"}
                 },
                 Professionnel : {
-                    EducationLevel : { type: String, default: " "},
+                    EducationLevel : { type: String, default: "lol"},
                     SchoolsAttended : [],
                     Fields : [],
                     PreviousWorks : [],
-                    CurrentWork : { type: String, default: " "},
-                    Salary : { type: String, default: " "}
+                    CurrentWork : { type: String, default: "lol"},
+                    Salary : { type: String, default: "lol"}
                 },
                 Intime : {
-                    Family : { type: String, default: " "},
-                    Kids : { type: String, default: " "},
-                    Sexuality : { type: String, default: " "},
-                    LeasureSpendings : { type: String, default: " "},
-                    CommoditySpendings : { type: String, default: " "},
+                    Family : { type: String, default: "lol"},
+                    Kids : { type: String, default: "lol"},
+                    Sexuality : { type: String, default: "lol"},
+                    LeasureSpendings : { type: String, default: "lol"},
+                    CommoditySpendings : { type: String, default: "lol"},
                     Hobbies : [],
                     Sports : [],
-                    Smoking : { type: String, default: " "},
-                    Weight : { type: String, default: " "},
-                    Religion : { type: String, default: " "},
-                    MovieFav : { type: String, default: " "},
-                    BookFav : { type: String, default: " "},
-                    DocFreq : { type: String, default: " "}
+                    Smoking : { type: String, default: "lol"},
+                    Weight : { type: String, default: "lol"},
+                    Religion : { type: String, default: "lol"},
+                    MovieFav : { type: String, default: "lol"},
+                    BookFav : { type: String, default: "lol"},
+                    DocFreq : { type: String, default: "lol"}
                 }
     },
     Preferences : {
