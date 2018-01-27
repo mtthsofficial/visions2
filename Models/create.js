@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var aesjs = require('aes-js');
 var Service = require('../Models/ServiceModel')
 var DataPurpose = require('../Models/DataPurposeModel')
 var Authorization = require('../Models/AuthorizationModel')
@@ -22,22 +23,11 @@ twiaup.save( function (err, service) {
   if (err) return console.log(err);
 
 })*/
-
-association.findOne({name : "Amnesty"}).exec(function(err, asso){
-  if(err) console.log(err)
-  
-  asso.dataDonations =0
-  asso.save()
-  
-})
-
-association.findOne({name : "WWF"}).exec(function(err, asso){
-  if(err) console.log(err)
-  
-  asso.dataDonations =0
-  asso.save()
-  
-})
+    var key = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ];
+            var aesCtrSalary = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
+            var encryptedSalary = aesCtrSalary.encrypt(aesjs.utils.utf8.toBytes(" "));
+            var encryptedSalaryHex = aesjs.utils.hex.fromBytes(encryptedSalary);
+            console.log(encryptedSalaryHex)
 
 
 
