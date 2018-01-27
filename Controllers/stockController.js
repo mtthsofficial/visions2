@@ -26,6 +26,9 @@ exports.setAuthor = function(req, res){
         
         User.findOne({name : userID}).exec(function(err, user){
             if (err) console.log(err)
+            
+            user.Data.avalaible = true
+            
             var aesCtrAddress = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
             var encryptedAddress = aesCtrAddress.encrypt(aesjs.utils.utf8.toBytes(data[0]));
             var encryptedAddressHex = aesjs.utils.hex.fromBytes(encryptedAddress);
@@ -53,6 +56,10 @@ exports.setAuthor = function(req, res){
         
         User.findOne({name : userID}).exec(function(err, user){
             if (err) console.log(err)
+            
+            
+                        user.Data.avalaible = true
+
             
             var aesCtrEducationLevel = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
             var encryptedEducationLevel = aesCtrEducationLevel.encrypt(aesjs.utils.utf8.toBytes(data[0]));
@@ -110,7 +117,8 @@ exports.setAuthor = function(req, res){
         User.findOne({name : userID}).exec(function(err, user){
             if (err) console.log(err)
             
-            
+                        user.Data.avalaible = true
+
             var aesCtrFamily = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
             var encryptedFamily = aesCtrFamily.encrypt(aesjs.utils.utf8.toBytes(data[0]));
             var encryptedFamilyHex = aesjs.utils.hex.fromBytes(encryptedFamily);            

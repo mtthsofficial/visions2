@@ -24,6 +24,7 @@ var userSchema = new Schema({
     availableData: [{type: Schema.ObjectId, ref: 'Data'}],
     preferedAuthorizations : {type: Schema.ObjectId, ref: 'Authorization'},
     Data : { id : Number,
+                avalaible : false,
                 FacebookPhotos : String, 
                 FacebookLocation : String,
                 FacebookRelationship : String,
@@ -33,6 +34,7 @@ var userSchema = new Schema({
                 FacebookPosts : [],
                 TwiiterPosts : [],
                 GoogleDriveData : [],
+                
                 Personnel : {
                     Birthday : String,
                     Address : String,
