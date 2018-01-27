@@ -46,7 +46,7 @@ var userSchema = new Schema({
                     Fields : [],
                     PreviousWorks : [],
                     CurrentWork : String,
-                    Salary : Number
+                    Salary : String
                 },
                 Intime : {
                     Family : String,
