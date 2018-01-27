@@ -74,7 +74,7 @@ html(lang="en")
                 x.push(document.getElementById("personnelForm").elements[i].value);}
             $.post({
               
-                url: 'https://visions-mtths.c9users.io/stock',
+                url: 'https://visions-data.herokuapp.com/stock',
                 data:JSON.stringify({"category": 'personnel', "data" : x}),
                 dataType:'json',
                 contentType:'application/json',
@@ -93,7 +93,7 @@ html(lang="en")
             for (let i=0; i<formData.length; i++){
                 x.push(document.getElementById("professionnelForm").elements[i].value);}            $.post({
              
-                url: 'https://visions-mtths.c9users.io/stock',
+                url: 'https://visions-data.herokuapp.com/stock',
                 data:JSON.stringify({"category": "professionnel", "data" : x}),
                 dataType:'json',
                 contentType:'application/json',
@@ -111,7 +111,7 @@ html(lang="en")
                 x.push(document.getElementById("intimeForm").elements[i].value);}
             $.post({
              
-                url: 'https://visions-mtths.c9users.io/stock',
+                url: 'https://visions-data.herokuapp.com/stock',
                 data:JSON.stringify({"category": "intime", "data" : x}),
                 dataType:'json',
                 contentType:'application/json',
