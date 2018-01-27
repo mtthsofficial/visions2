@@ -24,7 +24,7 @@ var userSchema = new Schema({
     availableData: [{type: Schema.ObjectId, ref: 'Data'}],
     preferedAuthorizations : {type: Schema.ObjectId, ref: 'Authorization'},
     Data : { id : Number,
-                FacebookPhotos : Number, 
+                FacebookPhotos : String, 
                 FacebookLocation : String,
                 FacebookRelationship : String,
                 FacebookReligion : String,
@@ -34,7 +34,7 @@ var userSchema = new Schema({
                 TwiiterPosts : [],
                 GoogleDriveData : [],
                 Personnel : {
-                    Birthday : {type : Date},
+                    Birthday : String,
                     Address : String,
                     Gender : String
                 },
@@ -50,16 +50,16 @@ var userSchema = new Schema({
                     Family : String,
                     Kids : Number,
                     Sexuality : String,
-                    LeasureSpendings : Number,
-                    CommoditySpendings : Number,
+                    LeasureSpendings : String,
+                    CommoditySpendings : String,
                     Hobbies : [],
                     Sports : [],
-                    Smoking : Boolean,
-                    Weight : Number,
+                    Smoking : String,
+                    Weight : String,
                     Religion : String,
                     MovieFav : String,
                     BookFav : String,
-                    DocFreq : Number
+                    DocFreq : String
                 }
     },
     Preferences : {
