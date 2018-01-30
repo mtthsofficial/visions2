@@ -27,13 +27,13 @@ html(lang="en")
             contentType:'application/json',
             success(response){
               console.log(response)
-            }
+            },
             
 
             error(jqXHR, status, errorThrown){console.log(jqXHR)}
 
                 })
-            }
+            },
             else 
               document.getElementById('UserError').innerHTML = 'Username already taken!'
 
