@@ -13,7 +13,7 @@ html(lang="en")
         
         
          $.post({
-            url: 'https://visions-data.herokuapp.com//checkUser',
+            url: 'https://visions-data.herokuapp.com/checkUser',
             data:JSON.stringify({"userID": username}),
             dataType:'json',
             contentType:'application/json',
@@ -29,10 +29,31 @@ html(lang="en")
           })
         
             }
+        function checkMail() {
+        let email = document.getElementById('email').value
         
+        
+        
+         $.post({
+            url: 'https://visions-data.herokuapp.com/checkMail',
+            data:JSON.stringify({"email": email}),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+            if(response == true){
+              document.getElementById('MailError').innerHTML = 'Email already taken!'
+              return false
+            }
+            return true
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
+        
+            }
     div(class='createTitle')
       p Enregistrez-vous
-      form(method="post", action ='/create' onsubmit="event.preventDefault(); checkUser();")
+      form(method="post", action ='/create' onsubmit="event.preventDefault(); checkUser(); checkMail()")
         p username
         input(class='centerButton pClass' id="idUser", type="text", name="idUser")
         p(id='UserError')

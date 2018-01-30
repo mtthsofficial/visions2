@@ -1,6 +1,6 @@
 var User = require("../Models/UserModel")
 let authorization = ("../Models/AuthorizationModel")
-let dataPurpose = require("../Models/dataPurposeModel")
+let dataPurpose = require("../Models/DataPurposeModel")
 let services = require("../Models/ServiceModel")
 
 
