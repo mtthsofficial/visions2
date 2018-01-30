@@ -20,11 +20,15 @@ html(lang="en")
             contentType:'application/json',
             success(response){
             if(response == false){
-               $.post({
+               $.ajax({
             url: 'https://visions-data.herokuapp.com/create',
             data:JSON.stringify({"idUser": document.getElementById("idUser").value, "email" : document.getElementById("email").value, "password" : document.getElementById("password").value}),
             dataType:'json',
             contentType:'application/json',
+            success(response){
+              console.log(response)
+            }
+            
 
             error(jqXHR, status, errorThrown){console.log(jqXHR)}
 
