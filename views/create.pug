@@ -6,13 +6,59 @@ html(lang="en")
 
 
   body(class="create")
+    script.
+      function checkUser() {
+        let username = document.getElementById('idUser').value
+        
+        
+        
+         $.post({
+            url: 'https://visions-mtths.c9users.io/checkUser',
+            data:JSON.stringify({"userID": username}),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+            if(response == true){
+              document.getElementById('UserError').innerHTML = 'Username already taken!'
+              return false
+            }
+            return true
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
+        
+            }
+        function checkMail() {
+        let email = document.getElementById('email').value
+        
+        
+        
+         $.post({
+            url: 'https://visions-mtths.c9users.io/checkMail',
+            data:JSON.stringify({"email": email}),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+            if(response == true){
+              document.getElementById('MailError').innerHTML = 'Email already taken!'
+              return false
+            }
+            return true
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
+        
+            }
     div(class='createTitle')
       p Enregistrez-vous
-      form(method="post", action ='/create')
+      form(method="post", action ='/create' onsubmit="event.preventDefault(); checkUser(); checkMail()")
         p username
         input(class='centerButton pClass' id="idUser", type="text", name="idUser")
+        p(id='UserError')
         p mail
-        input(class='centerButton pClass' id="email", type="text", name="email")
+        input(class='centerButton pClass' id="email", type="email", name="email")
         p password
         input(class='centerButton pClass' id="password", type="password", name="password")
         p
