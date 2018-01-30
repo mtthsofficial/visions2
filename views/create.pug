@@ -21,9 +21,20 @@ html(lang="en")
             success(response){
             if(response == true){
               document.getElementById('UserError').innerHTML = 'Username already taken!'
-              return false
+
             }
-            return true
+            else 
+              $.post({
+            url: 'https://visions-data.herokuapp.com/create',
+            data:JSON.stringify({"idUser": document.getElementById("idUser").value, "email" : document.getElementById("email").value, "password" : document.getElementById("password").value}),
+            dataType:'json',
+            contentType:'application/json',
+
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+                })
+        
+            
             },
             error(jqXHR, status, errorThrown){console.log(jqXHR)}
 
@@ -32,7 +43,6 @@ html(lang="en")
             }
         function checkMail() {
         let email = document.getElementById('email').value
-        
         
         
          $.post({
@@ -56,7 +66,7 @@ html(lang="en")
             }
     div(class='createTitle')
       p Enregistrez-vous
-      form(method="post", action ='/create')
+      form(method="post", action ='/create', onsubmit="event.preventDefault(); checkUser();")
         p username
         input(class='centerButton pClass' id="idUser", type="text", name="idUser")
         p(id='UserError')
