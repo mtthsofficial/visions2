@@ -54,7 +54,7 @@ html(lang="en")
             }
     div(class='createTitle')
       p Enregistrez-vous
-      form(method="post", action ='/create' onsubmit="event.preventDefault(); checkUser(); checkMail()")
+      form(method="post", action ='/create' onsubmit="event.preventDefault(); checkUser();")
         p username
         input(class='centerButton pClass' id="idUser", type="text", name="idUser")
         p(id='UserError')
