@@ -11,8 +11,6 @@ html(lang="en")
       function checkUser() {
         let username = document.getElementById('idUser').value
         
-        
-        
          $.post({
             url: 'https://visions-data.herokuapp.com/checkUser',
             data:JSON.stringify({"userID": username}),
@@ -71,7 +69,7 @@ html(lang="en")
             }
     div(class='createTitle')
       p Enregistrez-vous
-      form(method="post", action ='/create', onsubmit="event.preventDefault(); checkUser();")
+      form(method="post", action ='/create')
         p username
         input(class='centerButton pClass' id="idUser", type="text", name="idUser")
         p(id='UserError')
