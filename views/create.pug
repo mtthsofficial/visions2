@@ -12,31 +12,25 @@ html(lang="en")
         let username = document.getElementById('idUser').value
         
          $.post({
-            url: 'https://visions-data.herokuapp.com/checkUser',
+            url: 'https://visions-data.herokuapp.com//checkUser',
             data:JSON.stringify({"userID": username}),
             dataType:'json',
             contentType:'application/json',
             success(response){
             if(response == false){
-               $.post({
-            url: 'https://visions-data.herokuapp.com/create',
-            data:JSON.stringify({"idUser": document.getElementById("idUser").value, "email" : document.getElementById("email").value, "password" : document.getElementById("password").value}),
-            dataType:'json',
-            contentType:'application/json',
-            success(response){
-              console.log(response) 
-            },
-            error(jqXHR, status, errorThrown){console.log(jqXHR)}
-
-                })
+            
+                document.getElementById('love').removeAttribute('onsubmit')
+                if(document.getElementById('UserError').innerHTML == 'Username already taken!'){
+                  document.getElementById('UserError').innerHTML = ""
+                }
             
 
 
-            }},
-            else 
-              {document.getElementById('UserError').innerHTML = 'Username already taken!'}
+            }
+          else 
+              {document.getElementById('UserError').innerHTML = 'Username already taken!'} 
+                
 
-        
             
             },
             error(jqXHR, status, errorThrown){console.log(jqXHR)}
@@ -69,7 +63,7 @@ html(lang="en")
             }
     div(class='createTitle')
       p Enregistrez-vous
-      form(method="post", action ='/create')
+      form(id = 'love' method="post", action ='/create', onsubmit = 'event.preventDefault(); checkUser()')
         p username
         input(class='centerButton pClass' id="idUser", type="text", name="idUser")
         p(id='UserError')
