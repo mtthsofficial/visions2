@@ -12,7 +12,7 @@ html(lang="en")
         let username = document.getElementById('idUser').value
         
          $.post({
-            url: 'https://visions-data.herokuapp.com//checkUser',
+            url: 'https://visions-data.herokuapp.com/checkUser',
             data:JSON.stringify({"userID": username}),
             dataType:'json',
             contentType:'application/json',
