@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/style.css" type="text/css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  body(class ="jollyclick")
+    script.
+        function authorize(id){
+            
+            if($('#'+id).attr("class") === "buttonStyle" || $('#'+id).attr("class") === "buttonStyle2" ) {
+                $('#'+id).removeClass("buttonStyle").addClass('button-clicked')
+    
+               }
+              else {
+                  $('#'+id).removeClass("button-clicked").addClass("buttonStyle")
+    
+              }
+              
+              
+            }
+    h1(class = "center") Jollyclick
+    p(class="center") Vos données ? Elles sont à vous.
+    h2 Personnalisation
+    button(id="1" class="buttonStyle2" onclick="authorize(1)" value="Personnel") Objectifs
+    button(id="2" class="buttonStyle2" onclick="authorize(2)" value="Personnel") Personnalité
+    button(id="3" class="buttonStyle2" onclick="authorize(3)" value="Personnel") Profils favoris
+    h2 Matching
+    button(id="4" class="buttonStyle2" onclick="authorize(4)" value="Personnel") Compétences
+    button(id="5" class="buttonStyle2" onclick="authorize(5)" value="Personnel") Localisation
+    h2 Publicite
+    button(id="6" class="buttonStyle2" onclick="authorize(6)" value="Personnel") Age
+    button(id="7" class="buttonStyle2" onclick="authorize(7)" value="Personnel") Sexe
+    button(id="8" class="buttonStyle2" onclick="authorize(8)" value="Personnel") Compétences cherchées
+    button(id="9" class="buttonStyle2" onclick="authorize(9)" value="Personnel") Personnalité
+    h2 Statistiques
+    button(id="10" class="buttonStyle2" onclick="authorize(10)" value="Personnel") Navigation
+    button(id="11" class="buttonStyle2" onclick="authorize(11)" value="Personnel") Age
+    button(id="12" class="buttonStyle2" onclick="authorize(12)" value="Personnel") Sexe
+    button(id="13" class="buttonStyle2" onclick="authorize(13)" value="Personnel") Objectifs
+    button(id="14" class="buttonStyle2" onclick="authorize(14)" value="Personnel") Profils favoris

@@ -7,6 +7,11 @@ var serviceSchema = new Schema(
     name: String,
     DataUse: [{type : Schema.ObjectId, ref : 'DataPurpose'}],
     Purposes : [],
+    Personnalisation : [],
+    Recherche : [],
+    Statistiques : [],
+    Matching : [],
+    Publicite : [],
     Data : [],
     users : [{type : Schema.ObjectId, ref : 'User'}]
     });

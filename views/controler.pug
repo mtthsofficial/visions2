@@ -125,8 +125,12 @@ html(lang="en")
                         button(id="15" class="buttonStyle" onclick="authorize(4,2,15)" value="Intime") Autoriser
     p(class='demand') Notre programme d'autorisation s'assure que vos conditions soient respectées par chaque service dans le réseau VISIONS.
     p(class='demand') Jollyclick est la première plateforme à nous rejoindre, aidez-nous à en convainvre d'autres !
+    
+    a(href="https://visions-data.herokuapp.com/jollyclick")
+        img(class = "img-circle" src="/images/joll.jpg")
+    
     p(class='demand pClass') Dites nous pour quels services vous aimeriez avoir ce contrôle : 
-        form(class='centerButton' method="post", action ='https://visions-mtths.c9users.io/askedServices')
+        form(class='centerButton' method="post", action ='https://visions-data.herokuapp.com/askedServices')
             input(type='text' value=serviceName)
             input(type='submit' value="go!" name="GO!")
     script.
