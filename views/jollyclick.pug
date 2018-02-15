@@ -6,15 +6,42 @@ html(lang="en")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
   body(class ="jollyclick")
     script.
-        function authorize(id){
+        function authorize(id, purpose, data){
             
             if($('#'+id).attr("class") === "buttonStyle" || $('#'+id).attr("class") === "buttonStyle2" ) {
                 $('#'+id).removeClass("buttonStyle").addClass('button-clicked')
+                
+            $.post({
+            url: 'https://visions-data.herokuapp.com/set/jollyclick',
+            data:JSON.stringify({purpose: purpose, data : data
+            }),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
+          
     
                }
               else {
                   $('#'+id).removeClass("button-clicked").addClass("buttonStyle")
-    
+                    
+                    
+            $.post({
+            url: 'https://visions-data.herokuapp.com/set/jollyclick',
+            data:JSON.stringify({purpose: purpose, data : data, remove : true
+            }),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
               }
               
               
@@ -22,20 +49,25 @@ html(lang="en")
     h1(class = "center") Jollyclick
     p(class="center") Vos données ? Elles sont à vous.
     h2 Personnalisation
-    button(id="1" class="buttonStyle2" onclick="authorize(1)" value="Personnel") Objectifs
-    button(id="2" class="buttonStyle2" onclick="authorize(2)" value="Personnel") Personnalité
-    button(id="3" class="buttonStyle2" onclick="authorize(3)" value="Personnel") Profils favoris
+    button(id="1" class="buttonStyle2" onclick="authorize(1,0,5)" value="Personnel") Objectifs
+    button(id="2" class="buttonStyle2" onclick="authorize(2,0,7)" value="Personnel") Personnalité
+    button(id="3" class="buttonStyle2" onclick="authorize(3,0,9)" value="Personnel") Profils favoris
     h2 Matching
-    button(id="4" class="buttonStyle2" onclick="authorize(4)" value="Personnel") Compétences
-    button(id="5" class="buttonStyle2" onclick="authorize(5)" value="Personnel") Localisation
+    button(id="4" class="buttonStyle2" onclick="authorize(4,1,4)" value="Personnel") Compétences
+    button(id="5" class="buttonStyle2" onclick="authorize(5,1,3)" value="Personnel") Localisation
     h2 Publicite
-    button(id="6" class="buttonStyle2" onclick="authorize(6)" value="Personnel") Age
-    button(id="7" class="buttonStyle2" onclick="authorize(7)" value="Personnel") Sexe
-    button(id="8" class="buttonStyle2" onclick="authorize(8)" value="Personnel") Compétences cherchées
-    button(id="9" class="buttonStyle2" onclick="authorize(9)" value="Personnel") Personnalité
+    button(id="6" class="buttonStyle2" onclick="authorize(6,2,1)" value="Personnel") Age
+    button(id="7" class="buttonStyle2" onclick="authorize(7,2,2)" value="Personnel") Sexe
+    button(id="8" class="buttonStyle2" onclick="authorize(8,2,10)" value="Personnel") Demandes
+    button(id="9" class="buttonStyle2" onclick="authorize(9,2,7)" value="Personnel") Personnalité
     h2 Statistiques
-    button(id="10" class="buttonStyle2" onclick="authorize(10)" value="Personnel") Navigation
-    button(id="11" class="buttonStyle2" onclick="authorize(11)" value="Personnel") Age
-    button(id="12" class="buttonStyle2" onclick="authorize(12)" value="Personnel") Sexe
-    button(id="13" class="buttonStyle2" onclick="authorize(13)" value="Personnel") Objectifs
-    button(id="14" class="buttonStyle2" onclick="authorize(14)" value="Personnel") Profils favoris
+    button(id="10" class="buttonStyle2" onclick="authorize(10,3,11)" value="Personnel") Navigation
+    button(id="11" class="buttonStyle2" onclick="authorize(11,3,1)" value="Personnel") Age
+    button(id="12" class="buttonStyle2" onclick="authorize(12;3,2)" value="Personnel") Sexe
+    button(id="13" class="buttonStyle2" onclick="authorize(13,3,5)" value="Personnel") Objectifs
+    button(id="14" class="buttonStyle2" onclick="authorize(14,3,9)" value="Personnel") Profils favoris
+    h2 Recherche
+    button(id="15" class="buttonStyle2" onclick="authorize(15,4,0)" value="Personnel") Nom
+    button(id="16" class="buttonStyle2" onclick="authorize(16,4,4)" value="Personnel") Compétences
+    button(id="17" class="buttonStyle2" onclick="authorize(17,4,3)" value="Personnel") Localisation
+    button(id="18" class="buttonStyle2" onclick="authorize(18,4,6)" value="Personnel") Profession
