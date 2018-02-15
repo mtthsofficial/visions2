@@ -36,7 +36,7 @@ input:active {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	font-weight: bold;
 	color: #E5F3F5;
-	width: auto
+	display: inline-block;
 }
 
 .buttonStyle2 {
@@ -47,7 +47,7 @@ input:active {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	font-weight: bold;
 	color: #E5F3F5;
-	width: 75px;
+	display: inline-block;
 	position:relative;
 	left:25%;
 }
@@ -76,7 +76,6 @@ input:active {
 .buttonStyle:visited {
 	border: thin solid #E5F3F5;
 	background-color: #E5F3F5;
-	color: #143556;
 	cursor: pointer;
 }
 
@@ -96,7 +95,7 @@ input:active {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	font-weight: bold;
 	color: #143556;
-	width: 75px;
+	display: inline-block;
 	position:relative;
 }
 
@@ -162,6 +161,12 @@ p{
 }
 
 h1{
+	font-family : Futura;
+	color: #E5F3F5;
+	text-align : left;
+}
+
+h2{
 	font-family : Futura;
 	color: #E5F3F5;
 	text-align : left;
@@ -340,6 +345,19 @@ left:0%;
 	position: relative;
 	left:44%;
 }
+.carousel{
+    background: #2f4357;
+    margin-top: 20px;
+}
+.carousel .item{
+    min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+.bs-example{
+	margin: 20px;
+}
 
 .labels { 
 	font-family : Futura;
@@ -417,6 +435,14 @@ left:0%;
     background-attachment: fixed;
     background-size: 1500px 800px
 	
+}
+
+.jollyclick{
+	background-image: url("http://visionspol.eu/wp-content/uploads/2018/02/fond.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: 1500px 800px
 }
 
 .data4good {
