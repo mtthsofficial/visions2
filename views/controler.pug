@@ -37,7 +37,7 @@ html(lang="en")
             $('#'+id).removeClass("buttonStyle").addClass('button-clicked')
 
             $.post({
-            url: 'https://visions-mtths.c9users.io/authorize',
+            url: 'https://visions-data.herokuapp.com/authorize',
             data:JSON.stringify({"purpose": purpose, "data" : data}),
             dataType:'json',
             contentType:'application/json',
