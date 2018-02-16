@@ -1,5 +1,5 @@
 var express = require('express');
-var setControler = require("../Controlers/setController")
+var setControler = require("../Controllers/setController")
 var router = express.Router();
 
 router.post('/', setControler.jollyClick);
