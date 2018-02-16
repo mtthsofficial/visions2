@@ -1,6 +1,8 @@
 var User = require("../Models/UserModel")
 let services = require("../Models/ServiceModel")
 var mongoose = require('mongoose');
+let jollyclick = require("../Models/jollyclickModel")
+
 mongoose.Promise = require('bluebird');
 var regex = require('regex-email');
 const bcrypt = require('bcrypt');
@@ -13,6 +15,12 @@ let email = req.body.email;
 if(regex.test(email)){
 
 let error = false;
+
+jollyclick.create({userVisions : idUser}, function(err, jc){
+    if(err) console.log(err)
+    
+    jc.save()
+})
 
 bcrypt.hash(pw, 10, function(err, hash) {
     if (err) console.log(err)
