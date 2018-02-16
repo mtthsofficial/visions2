@@ -3,7 +3,6 @@ mongoose.Promise = require('bluebird');
 const bcrypt = require('bcrypt');
 var User = require("../Models/UserModel") 
 var async = require('async');
-var Kawaa = require('../Models/KawaaModel');
 var Jollyclick = require('../Models/jollyclickModel');
 var aesjs = require('aes-js');
 
