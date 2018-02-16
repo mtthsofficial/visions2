@@ -14,7 +14,7 @@ var uniqueArray = function(arrArg) {
   });
 };
     
-    Jollyclick.findOne({userVisions : req.body.username}).exec(function(err, user){
+    Jollyclick.findOne({userVisions : req.cookies.userID}).exec(function(err, user){
         if(err) console.log(err)
         
     
