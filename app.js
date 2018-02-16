@@ -86,7 +86,7 @@ app.use('/twitter', twitter);
 app.use('/google', google);
 app.use('/jollyclick', jollyclick);
 app.use('/googleData', googleData);
-app.use('/set/jollyclick', set1);
+app.use('/set', set1);
 app.use('/recuperer', recuperer);
 app.use('/controler', controler);
 app.use('/twitterData', twitterData);

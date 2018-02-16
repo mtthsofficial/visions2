@@ -12,7 +12,7 @@ html(lang="en")
                 $('#'+id).removeClass("buttonStyle").addClass('button-clicked')
                 
             $.post({
-            url: 'https://visions-data.herokuapp.com/set/jollyclick',
+            url: 'https://visions-data.herokuapp.com/set',
             data:JSON.stringify({purpose: purpose, data : data
             }),
             dataType:'json',
@@ -31,7 +31,7 @@ html(lang="en")
                     
                     
             $.post({
-            url: 'https://visions-data.herokuapp.com/set/jollyclick',
+            url: 'https://visions-data.herokuapp.com/set',
             data:JSON.stringify({purpose: purpose, data : data, remove : true
             }),
             dataType:'json',
