@@ -1,0 +1,309 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/rama.css" type="text/css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css")
+    link(href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    
+
+  body(class ="jollyclick")
+    script.
+
+        
+          
+        function authorize(id, purpose, data){
+            
+            if($('#'+id).attr("class") === "buttonStyle" || $('#'+id).attr("class") === "buttonStyle2" ) {
+                $('#'+id).removeClass("buttonStyle").addClass('button-clicked')
+                
+            $.post({
+            url: 'https://visions-data.herokuapp.com/set',
+            data:JSON.stringify({purpose: purpose, data : data
+            }),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
+          
+    
+               }
+              else {
+                  $('#'+id).removeClass("button-clicked").addClass("buttonStyle")
+                    
+                    
+            $.post({
+            url: 'https://visions-data.herokuapp.com/set',
+            data:JSON.stringify({purpose: purpose, data : data, remove : true
+            }),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+
+          })
+              }
+              
+              
+            }
+            
+        function showExplanation(purpose){
+         if(purpose=='personnalisation'){
+            $('#personnalisation').addClass('carrePurpose-active');
+            $('#explicationPersonnalisation').addClass('carreExplication-active');
+            
+            
+            document.getElementById('publicite').style.opacity = 0;
+            document.getElementById('matching').style.opacity = 0;
+            document.getElementById('statistiques').style.opacity = 0;
+            document.getElementById('recherche').style.opacity = 0;
+    
+            
+            document.getElementById('matchingLabel').style.opacity = 0;
+            document.getElementById('pubLabel').style.opacity = 0;
+            document.getElementById('etudesLabel').style.opacity = 0;
+            document.getElementById('rechercheLabel').style.opacity = 0;
+            document.getElementById('personnalisation').setAttribute('onclick', "hideExplanation('personnalisation')")
+         }
+         if(purpose=='matching'){
+         
+            $('#matching').addClass('carrePurpose-active');
+            $('#explicationMatching').addClass('carreExplication-active');
+            
+            document.getElementById('personnalisation').style.opacity = 0;
+            document.getElementById('publicite').style.opacity = 0;
+            document.getElementById('statistiques').style.opacity = 0;
+            document.getElementById('recherche').style.opacity = 0;
+            
+            
+            document.getElementById('newsfeedLabel').style.opacity = 0;
+            document.getElementById('pubLabel').style.opacity = 0;
+            document.getElementById('etudesLabel').style.opacity = 0;
+            document.getElementById('rechercheLabel').style.opacity = 0;
+            document.getElementById('matching').setAttribute('onclick', "hideExplanation('matching')")
+         }         
+         if(purpose=='publicite'){
+            $('#publicite').addClass('carrePurpose-active');
+            $('#explicationPublicite').addClass('carreExplication-active');
+            
+            
+            document.getElementById('personnalisation').style.opacity = 0;
+            document.getElementById('matching').style.opacity = 0;
+            document.getElementById('statistiques').style.opacity = 0;
+            document.getElementById('recherche').style.opacity = 0;
+            
+            document.getElementById('matchingLabel').style.opacity = 0;
+            document.getElementById('newsfeedLabel').style.opacity = 0;
+            document.getElementById('etudesLabel').style.opacity = 0;
+            document.getElementById('rechercheLabel').style.opacity = 0;
+            document.getElementById('publicite').setAttribute('onclick', "hideExplanation('publicite')")
+         }
+         if(purpose=='statistiques'){
+            $('#statistiques').addClass('carrePurpose-active');
+            $('#explicationStatistiques').addClass('carreExplication-active');
+            
+            document.getElementById('personnalisation').style.opacity = 0;
+            document.getElementById('publicite').style.opacity = 0;
+            document.getElementById('matching').style.opacity = 0;
+            document.getElementById('recherche').style.opacity = 0;
+            
+            document.getElementById('matchingLabel').style.opacity = 0;
+            document.getElementById('pubLabel').style.opacity = 0;
+            document.getElementById('newsfeedLabel').style.opacity = 0;
+            document.getElementById('rechercheLabel').style.opacity = 0;
+            document.getElementById('statistiques').setAttribute('onclick', "hideExplanation('statistiques')")
+         }
+         if(purpose=='recherche'){
+         
+            $('#recherche').addClass('carrePurpose-active');
+            $('#explicationRecherche').addClass('carreExplication-active');
+            
+            document.getElementById("explicationRecherche").style.display = "block";
+            document.getElementById('personnalisation').style.opacity = 0;
+            document.getElementById('publicite').style.opacity = 0;
+            document.getElementById('statistiques').style.opacity = 0;
+            document.getElementById('matching').style.opacity = 0;
+            
+            document.getElementById('matchingLabel').style.opacity = 0;
+            document.getElementById('pubLabel').style.opacity = 0;
+            document.getElementById('etudesLabel').style.opacity = 0;
+            document.getElementById('newsfeedLabel').style.opacity = 0;
+            document.getElementById('recherche').setAttribute('onclick', "hideExplanation('recherche')")
+         } 
+        }
+
+        function hideExplanation(purpose){
+         if(purpose=='personnalisation'){
+            $('#personnalisation').removeClass('carrePurpose-active');
+            $('#explicationPersonnalisation').removeClass('carreExplication-active');
+            document.getElementById('matching').style.opacity = 1;
+            document.getElementById('publicite').style.opacity = 1;
+            document.getElementById('statistiques').style.opacity = 1;
+            document.getElementById('recherche').style.opacity = 1;
+            
+            document.getElementById('matchingLabel').style.opacity = 1;
+            document.getElementById('pubLabel').style.opacity = 1;
+            document.getElementById('etudesLabel').style.opacity = 1;
+            document.getElementById('rechercheLabel').style.opacity = 1;
+            document.getElementById('personnalisation').setAttribute('onclick', "showExplanation('personnalisation')")
+         }
+         if(purpose=='matching'){
+         
+            $('#matching').removeClass('carrePurpose-active');
+            $('#explicationMatching').removeClass('carreExplication-active');
+            
+            document.getElementById('personnalisation').style.opacity = 1;
+            document.getElementById('publicite').style.opacity = 1;
+            document.getElementById('statistiques').style.opacity = 1;
+            document.getElementById('recherche').style.opacity = 1;
+            
+            document.getElementById('newsfeedLabel').style.opacity = 1;
+            document.getElementById('pubLabel').style.opacity = 1;
+            document.getElementById('etudesLabel').style.opacity = 1;
+            document.getElementById('rechercheLabel').style.opacity = 1;
+            document.getElementById('matching').setAttribute('onclick', "showExplanation('matching')")
+         }         
+         if(purpose=='publicite'){
+            $('#publicite').removeClass('carrePurpose-active');
+            $('#explicationPublicite').removeClass('carreExplication-active');
+            
+            document.getElementById('personnalisation').style.opacity = 1;
+            document.getElementById('matching').style.opacity = 1;
+            document.getElementById('statistiques').style.opacity = 1;
+            document.getElementById('recherche').style.opacity = 1;
+            
+            document.getElementById('matchingLabel').style.opacity = 1;
+            document.getElementById('newsfeedLabel').style.opacity = 1;
+            document.getElementById('etudesLabel').style.opacity = 1;
+            document.getElementById('rechercheLabel').style.opacity = 1;
+            document.getElementById('publicite').setAttribute('onclick', "showExplanation('publicite')")
+         }
+         if(purpose=='statistiques'){
+            $('#statistiques').removeClass('carrePurpose-active');
+            $('#explicationStatistiques').removeClass('carreExplication-active');
+            
+            document.getElementById('personnalisation').style.opacity = 1;
+            document.getElementById('publicite').style.opacity = 1;
+            document.getElementById('matching').style.opacity = 1;
+            document.getElementById('recherche').style.opacity = 1;
+            
+            document.getElementById('matchingLabel').style.opacity = 1;
+            document.getElementById('pubLabel').style.opacity = 1;
+            document.getElementById('newsfeedLabel').style.opacity = 1;
+            document.getElementById('rechercheLabel').style.opacity = 1;
+            document.getElementById('statistiques').setAttribute('onclick', "showExplanation('statistiques')")
+         }
+         if(purpose=='recherche'){
+            $('#recherche').addClass('carrePurpose-active');
+            $('#explicationRecherche').addClass('carreExplication-active');
+                
+            document.getElementById("explicationRecherche").style.display = "none";
+            document.getElementById('personnalisation').style.opacity = 1;
+            document.getElementById('publicite').style.opacity = 1;
+            document.getElementById('statistiques').style.opacity = 1;
+            document.getElementById('matching').style.opacity = 1;
+            
+            document.getElementById('matchingLabel').style.opacity = 1;
+            document.getElementById('pubLabel').style.opacity = 1;
+            document.getElementById('etudesLabel').style.opacity = 1;
+            document.getElementById('newsfeedLabel').style.opacity = 1;
+            document.getElementById('recherche').setAttribute('onclick', "showExplanation('recherche')")
+         } 
+        }
+        
+        function pay(n) {
+            if(n=='emplois'){
+                document.getElementById('emplois').innerHTML = 'Emplois Précédents'
+                var walletValue = parseFloat(document.getElementById('walletValue').value) + 20/100
+                document.getElementById('wallet').innerHTML = "DataWallet = "+ walletValue +" €"
+                document.getElementById('walletValue').value  = walletValue
+                document.getElementById('emplois').setAttribute('onclick', "authorize('emplois',3,9)" )
+                $('emplois').removeClass("buttonStyle2").addClass('button-clicked')
+
+                
+            }
+            
+            if(n=='hobbies'){
+                document.getElementById('hobbies').innerHTML = 'Hobbies'
+                var walletValue = parseFloat(document.getElementById('walletValue').value) + 20/100
+                document.getElementById('wallet').innerHTML = "DataWallet = "+ walletValue +" €"
+                document.getElementById('walletValue').value  = walletValue
+                document.getElementById('hobbies').setAttribute('onclick', "authorize('hobbies',3,9)" )
+                $('hobbies').removeClass("buttonStyle2").addClass('button-clicked')
+
+            }
+        }
+main
+    include navbar.pug 
+    h1(class="center" id="subtitle") Vos données ? Elles sont à vous.
+    div(class ="title")
+      span jollyclick
+    div(class='circles')
+        button(class='carrePurpose' id='personnalisation' onclick="showExplanation('personnalisation')")
+            label(id='newsfeedLabel') Newsfeed
+        div(class='carreExplication' id="explicationPersonnalisation") Pour vous présenter dans votre newsfeed les contenus les plus adaptés à vos besoins.
+            div
+                br
+                button(id="1" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(1,0,5)" value="Personnel") Objectifs
+                br
+                button(id="2" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(2,0,7)" value="Personnel") Personnalité
+                br
+                button(id="3" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(3,0,9)" value="Personnel") Profils favoris
+        button(class='carrePurpose' id='matching' onclick="showExplanation('matching')")
+            label(id ='matchingLabel') Matching
+        div(class='carreExplication' id="explicationMatching") Pour vous mettre en relation avec les personnes qui vous sont le plus complémentaires.
+            div
+                br
+                button(id="4" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(4,1,4)" value="Personnel") Compétences
+                br
+                button(id="5" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(5,1,3)" value="Personnel") Localisation
+        button(class='carrePurpose' id='publicite' onclick="showExplanation('publicite')")
+            label(id ='pubLabel') Publicité
+        div(class='carreExplication' id="explicationPublicite") Pour vous présenter des annonces en fonction des besoins de votre projet.
+            div
+                br
+                button(id="6" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(6,2,1)" value="Personnel") Age
+                br
+                button(id="7" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(7,2,2)" value="Personnel") Sexe
+                br
+                button(id="8" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(8,2,10)" value="Personnel") Demandes
+                br
+                button(id="9" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(9,2,7)" value="Personnel") Personnalité
+        button(class='carrePurpose' id='statistiques' onclick="showExplanation('statistiques')") 
+            label(id ='etudesLabel') Études
+        div(class='carreExplication' id="explicationStatistiques") Pour mieux connaître ses utilisateurs et l'utilisation de sa plateforme, usage interne uniquement.
+            div
+                br
+                button(id="10" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(10,3,11)" value="Personnel") Navigation
+                br
+                button(id="11" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(11,3,1)" value="Personnel") Age
+                br
+                button(id="12" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(12;3,2)" value="Personnel") Sexe
+                br
+                button(id="13" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(13,3,5)" value="Personnel") Objectifs
+                br
+                button(id="14" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(14,3,9)" value="Personnel") Profils favoris
+                br
+                button(id="emplois" class="buttonStyle2 btn btn-primary btn-lg" onclick="pay('emplois')" value="Personnel") Emplois précédents (0,20€)  
+                br
+                button(id="hobbies" class="buttonStyle2 btn btn-primary btn-lg" onclick="pay('hobbies')" value="Personnel") Hobbies (0,20€)  
+        button(class='carrePurpose' id='recherche' onclick="showExplanation('recherche')")
+            label(id ='rechercheLabel') Recherche
+        div(class='carreExplication' id="explicationRecherche") Pour permettre à d'autres clickers de facilement vous trouver.
+            div
+                br
+                button(id="15" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(15,4,0)" value="Personnel") Nom
+                br
+                button(id="16" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(16,4,4)" value="Personnel") Compétences
+                br
+                button(id="17" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(17,4,3)" value="Personnel") Localisation
+                br
+                button(id="18" class="buttonStyle2 btn btn-primary btn-lg" onclick="authorize(18,4,6)" value="Personnel") Profession
+        
+    include footer.pug

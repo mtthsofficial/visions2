@@ -1,0 +1,232 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/rama.css" type="text/css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+
+  body(class ="profile")
+    //MyProfile tab
+    img(class='profilePIc' src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Vladimir_Putin_%282017-07-08%29.jpg/220px-Vladimir_Putin_%282017-07-08%29.jpg')
+    p(class='FirstName') Vladimir
+    p(class='LastName') Putin
+    //FORMS TO INPUT DATA (3 CATEGORIES)
+    h2(class='explanation') Input data
+    div(class='dataCategory') Personnal
+        form(id='personnelForm')
+        div(class='form-group row')
+            label(class='labels') Adresse
+            div(class="inputBank")
+                input(type='text' class='form-control' value=adresse id='adresse')
+        div(class='form-group row')
+            label(class='labels') Genre
+            div(class="inputBank")
+                input(type='text' class='form-control' value=genre id='genre')
+        div(class='form-group row')
+            label(class='labels') Date de naissance
+            div(class="inputBank")
+                input(type='date' class='form-control' value=birthday id='date')
+        button(type="submit" class="buttonStock btn btn-primary" onclick='sendData1()') Enregistrer
+    div(class='dataCategory') Professionnal
+    form(id='professionnelForm')
+        div(class='form-group row')
+            label(class='labels') Niveau d'études
+            p
+            select(class="inputBank" id="EducationLevel")
+                option BAC/CAP/BEP
+                option Licence
+                option Master
+                option Doctorat
+        div(class='form-group row')
+            label(class='labels') Ecoles et universités (séparez les noms par une virgule)
+            div(class="inputBank")
+                input(type='text' class='form-control' value=ecoles id='ecoles')
+        div(class='form-group row')
+            label(class='labels') Domaine(s) d'études (séparez par virgule si plusieurs)
+            div(class="inputBank")
+                input(type='text' class='form-control' value=domaines id='domaines')
+        div(class='form-group row')
+            label(class='labels') Emploi(s) précédent(s) (séparez par virgule si plusieurs)
+            div(class="inputBank")
+                input(type='text' class='form-control' value=emploisPrecedents id='emploisPrecedents')
+        div(class='form-group row')
+            label(class='labels') Emploi(s) actuel(s) (séparez par virgule si plusieurs)
+            div(class="inputBank")
+                input(type='text' class='form-control' value=emploisActuels id='emploisActuels')            
+        div(class='form-group row')
+            label(class='labels') Salaire mensuel brut
+            div(class="inputBank")
+                input(type='text' class='form-control' value=salaire id='salaire')
+        button(type="submit" class=" buttonStock btn btn-primary" onclick='sendData2()') Enregistrer
+    div(class='dataCategory') Intimate
+    form(id='intimeForm')
+        div(class='form-group row')
+            label(class='labels') Situation familiale
+            p
+            select(class="inputBank" id="family")
+                option Célibataire
+                option Marié(e)
+                option Divorcé(e)
+                option Marié(e) avec enfant(s)
+                option Divorcé(e) avec enfant(s)
+                option Pacsé(e)
+                option Polygame
+        div(class='form-group row')
+            label(class='labels') Nombre d'enfants
+            p
+            select(class="inputBank" id="kids")
+                option 0
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+                option 5+
+        div(class='form-group row')
+            label(class='labels') Sexualité
+            p
+            select(class="inputBank" id="sexuality")
+                option Hétérosexuelle
+                option Homosexuelle
+                option Bisexuelle
+                option Asexuée
+                option Polyamoureuse
+                option Pansexuelle
+        div(class='form-group row')
+            label(class='labels') Dépenses mensuelles dans les loisirs (restaurants, concerts, livres, cinémas, culture)
+            div(class="inputBank")
+                input(type='number' class='form-control' value=depensesLoisirs id='depensesLoisirs')
+        div(class='form-group row')
+            label(class='labels') Dépenses mensuelles dans les commodités (courses, essence, factures)
+            div(class="inputBank")
+                input(type='number' class='form-control' value=depensesCommodites id='depensesCommodites')
+        div(class='form-group row')
+            label(class='labels') Loisirs et passions (séparez les noms par une virgule)
+            div(class="inputBank")
+                input(type='text' class='form-control' value=loisirs id='loisirs')
+        div(class='form-group row')
+            label(class='labels') Sports (séparez les noms par une virgule)
+            div(class="inputBank")
+                input(type='text' class='form-control' value=sports id='sports')
+        div(class='form-group row')
+            label(class='labels') Fumeur(se)
+            p
+            select(class="inputBank" id="fumeur")
+                option Oui
+                option Non
+        div(class='form-group row')
+            label(class='labels') Poids
+            div(class="inputBank")
+                input(type='number' class='form-control' value=poids id='poids')
+        div(class='form-group row')
+            label(class='labels') Religion
+            p
+            select(class="inputBank" id="religion")
+                option Chrétienne
+                option Musulmane
+                option Juive
+                option Boudhiste
+                option Polythéiste
+                option Animiste
+                option Athée
+                option Agnostique
+        div(class='form-group row')
+            label(class='labels') Politique
+            p
+            select(class="inputBank" id="politique")
+                option Extrême Gauche
+                option Gauche
+                option Centre
+                option Droite
+                option Extrême Droite
+                option Anarchiste
+        div(class='form-group row')
+            label(class='labels') A quelle fréquence allez vous chez le médecin par mois ?
+            p
+            select(class="inputBank" id="kids")
+                option 0
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+                option 5+
+        div(class='form-group row')
+            label(class='labels') Votre genre de film préféré
+            div(class="inputBank")
+                input(type='text' class='form-control' value=film id='film')
+        div(class='form-group row')
+            label(class='labels') Votre auteur préféré
+            div(class="inputBank")
+                input(type='text' class='form-control' value=livre id='livre')
+        button(type="submit" class="buttonStock btn btn-primary" onclick='sendData3()') Enregistrer
+    // BUTTONS TO CONNECT TO APIS
+    h2(class='explanation') Add more data from services
+        button(class='apiButton') Facebook
+        button(class='apiButton') Google
+        button(class='apiButton') LinkedIn
+    // CONTROL TAB (basically same design as jollyclick, a bunch of purposes, explanations and dataTypes)
+    div(class='carrePurpose' id='personnalisation' onclick="showExplanation('personnalisation')") Personalisaton
+        div(class='carreExplication' id="explicationPersonnalisation" style="display:none;") Données utilisées pour personnaliser le service
+            br
+            div(class='dataTypes')
+            button(id="1" class="buttonStyle2" onclick="authorize(1,0,5)" value="Personnel") Personnal
+            br
+            button(id="2" class="buttonStyle2" onclick="authorize(2,0,7)" value="Personnel") Professionnal
+            br
+            button(id="3" class="buttonStyle2" onclick="authorize(3,0,9)" value="Personnel") Intime
+    br
+    br
+    div(class='carrePurpose' id='publicite' onclick="showExplanation('publicite')") Publicité
+        div(class='carreExplication' id="explicationMatching" style="display:none;") Données utilisées pour cibler des publicités en fonction de vos goûts
+            div(class='dataTypes')
+            button(id="1" class="buttonStyle2" onclick="authorize(1,0,5)" value="Personnel") Personnal
+            br
+            button(id="2" class="buttonStyle2" onclick="authorize(2,0,7)" value="Personnel") Professionnal
+            br
+            button(id="3" class="buttonStyle2" onclick="authorize(3,0,9)" value="Personnel") Intime
+    br
+    br
+    div(class='carrePurpose' id='publicite' onclick="showExplanation('publicite')") Statistiques
+            br
+            div(class='dataTypes')
+            button(id="1" class="buttonStyle2" onclick="authorize(1,0,5)" value="Personnel") Personnal
+            br
+            button(id="2" class="buttonStyle2" onclick="authorize(2,0,7)" value="Personnel") Professionnal
+            br
+            button(id="3" class="buttonStyle2" onclick="authorize(3,0,9)" value="Personnel") Intime
+    br
+    br
+    div(class='carrePurpose' id='statistiques' onclick="showExplanation('statistiques')") Revente
+        br
+        div(class='carreExplication' id="explicationStatistiques" style="display:none;") Données revendues à des acteurs extérieurs
+            br
+            div(class='dataTypes')
+            button(id="1" class="buttonStyle2" onclick="authorize(1,0,5)" value="Personnel") Personnal
+            br
+            button(id="2" class="buttonStyle2" onclick="authorize(2,0,7)" value="Personnel") Professionnal
+            br
+            button(id="3" class="buttonStyle2" onclick="authorize(3,0,9)" value="Personnel") Intime
+    br
+    br
+    div(class='carrePurpose' id='recherche' onclick="showExplanation('recherche')") Recherche
+        br
+        div(class='carreExplication' id="explicationRecherche" style="display:none;") Données utilisées à des fins de R&D : tester nouveaux algorithmes, intelligence artificielle
+            br
+            div(class='dataTypes')
+            button(id="1" class="buttonStyle2" onclick="authorize(1,0,5)" value="Personnel") Personnal
+            br
+            button(id="2" class="buttonStyle2" onclick="authorize(2,0,7)" value="Personnel") Professionnal
+            br
+            button(id="3" class="buttonStyle2" onclick="authorize(3,0,9)" value="Personnel") Intime
+    // Then it is as you said : you scroll and it loads pages (like jollyclick) for specific purposes), so i don't really know what i need to code here
+    select(class='dropdownServices') Choose a service
+        option jollyclick
+        option Tinder
+        option Carrefour
+    // SELL TAB
+    div(class='serviceName') jollyclick 
+        div(class='purposeName') Statistiques
+            div(class='dataType') Salaire, Compétences, Situation familiale
+                div(class='price') 0,40€
+

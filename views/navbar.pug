@@ -1,0 +1,31 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(button='', type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(rel='home', href='#', title='Visions')
+        img(style='max-width:100px; margin-top: -7px; margin-left: 10px', src='/images/logo.png')
+    #navbar.collapse.navbar-collapse.navbar-responsive-collapse
+      ul.nav.navbar-nav.pull-right
+        li
+          a(href='#') Profile
+        li
+          a(href='#') About
+        li
+          a(href='#') Help
+        li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown', type='checkbox', role='button', aria-haspopup='true', aria-expanded='false', class="dropbtn")
+              |Services
+              span.caret
+            div(class="dropdown-content")
+              ul.dropdown-menu
+                  li
+                    a(href='#') jollyclick
+                  li
+                    a(href='#') Add another..
+        li
+          a(href='#' id="wallet") DataWallet = 0 €
+              input(type='hidden' id='walletValue' value=0)

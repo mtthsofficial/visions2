@@ -8,47 +8,12 @@ var mongoose = require('mongoose');
 var autoIncrement = require('mongoose-auto-increment'); 
 mongoose.Promise = require('bluebird');
 
-var index = require('./routes/index');
-var facebook = require('./routes/facebook');
-var authorizations = require('./routes/authorizations');
-var users = require('./routes/users');
-var echanger = require('./routes/echanger');
-var jollyclick = require('./routes/jollyclick');
-var stock = require('./routes/stock');
-var checkUser = require('./routes/checkUser');
-var checkMail = require('./routes/checkMail');
-var dataBank = require('./routes/dataBank');
-var pay = require('./routes/pay');
-var set1 = require('./routes/set');
-var donate = require('./routes/donate');
-var askedServices = require('./routes/askedServices');
-var association = require('./routes/association');
-var data4good = require('./routes/data4good');
-var displayUserData = require('./routes/displayUserData');
-var twitterData = require('./routes/twitterData');
-var register = require('./routes/register')
-var google = require('./routes/google')
-var googleData = require('./routes/googleData') 
-var recuperer = require('./routes/recuperer')
-var accueil = require('./routes/accueil')
-var services = require("./routes/services")
-var setAuthor = require("./routes/setAuthor")
-var twitter = require("./routes/twitter") 
-var purpose = require("./routes/purpose") 
-var controler = require("./routes/controler") 
-var authorize = require("./routes/authorize") 
+var rama = require('./routes/rama');
+
 
 //var checkAuthor = require("./routes/checkAuthor");
 var home = require("./routes/home")
-var create = require("./routes/create")
-var admin = require("./routes/admin")
-var adminEntreprise = require("./routes/adminEntreprise")
-var adminPurposeData = require("./routes/adminPurposeData")
-var askData = require("./routes/askData")
-var adminService = require("./routes/adminService")
-var userPreferences = require('./routes/userPreferences');
-var servicesSimulation = require('./routes/servicesSimulationHome')
-var registerData = require('./routes/registerData');
+
 
 /*var userModel = require('./Models/UserModel')
 var serviceModel = require('./Models/ServiceModel')
@@ -77,45 +42,8 @@ app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', home);
-app.use('/facebook', facebook);
-app.use('/stock', stock);
-app.use('/authorizations', authorizations);
-app.use('/askData', askData);
-app.use('/displayUserData', displayUserData);
-app.use('/twitter', twitter);
-app.use('/google', google);
-app.use('/jollyclick', jollyclick);
-app.use('/googleData', googleData);
-app.use('/set', set1);
-app.use('/recuperer', recuperer);
-app.use('/controler', controler);
-app.use('/twitterData', twitterData);
-app.use('/admin', admin);
-app.use('/askedServices', askedServices);
-app.use('/pay', pay);
-app.use('/donate', donate);
-app.use('/association', association);
-app.use('/setAuthor', setAuthor);
-app.use('/accueil', accueil);
-app.use('/data4good', data4good);
-app.use('/dataBank', dataBank);
-app.use('/checkUser', checkUser);
-app.use('/checkMail', checkMail);
-app.use('/authorize', authorize);
-app.use('/echanger', echanger);
-app.use('/adminEntreprise', adminEntreprise);
-app.use('/adminService', adminService)
-app.use('/create', create) 
-app.use('/adminPurposeData', adminPurposeData) 
-app.use('/users', users);
-app.use('/login', index)
-app.use('/register', register)
-app.use('/services', services)
-app.use('/setAuthor', setAuthor)
-app.use('/purpose', purpose) 
-app.use('/userPreferences', userPreferences)
-app.use('/servicesSimulation', servicesSimulation)
-app.use('/registerData', registerData) 
+app.use('/rama', rama);
+
 //app.use('/checkAuthor', checkAuthor)
 
 // catch 404 and forward to error handler
@@ -138,7 +66,10 @@ app.use(function(err, req, res, next) {
 
 
 
+//var mongoDB = 'mongodb://mtths:Visions-database-19@ds161455.mlab.com:61455/visions';
+// delete in a bit 
 var mongoDB = 'mongodb://mtths:Visions-database-19@ds161455.mlab.com:61455/visions';
+
 mongoose.connect(mongoDB, {
   useMongoClient: true
 });

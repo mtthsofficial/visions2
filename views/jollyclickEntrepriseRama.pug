@@ -1,0 +1,320 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet" href="/stylesheets/rama.css" type="text/css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  body(class ="jollyclick")
+  
+    h1(class = "center") Jollyclick
+
+    div(id='purposes')
+    div(id='carrePurpose')
+      h2 Personnalisation
+      div(id='Personnalisation')
+        button(id="1" class="buttonStyle2" onclick="authorize(1,0,5)" value="Personnel") Objectifs
+        button(id="2" class="buttonStyle2" onclick="authorize(2,0,7)" value="Personnel") Personnalité
+        button(id="3" class="buttonStyle2" onclick="authorize(3,0,9)" value="Personnel") Profils favoris
+      select(id='PersonnalisationSelect' class="buttonStyle2" name ='Data')
+        option(value='Religion' selected=true) Religion
+        option(value='Localisation' ) Localisation
+        option(value='Hobbies' ) Hobbies
+        option(value='Situation familiale' ) Situation familiale
+        option(value='Achats' ) Achats
+        option(value='Emplois précédents' ) Emplois précédents
+        option(value='Habitutdes alimentaires' ) Habitutdes alimentaires
+        option(value='Salaires' ) Salaire
+        option(value='Emplois précédents' ) Emplois précédents
+        option(value="Nombre d'enfants" ) Nombre d'enfants
+        option(value='Poids' ) Poids
+        option(value='Sports' ) Sports
+        option(value='Politique' ) Politique
+        option(value='Dépenses Loisirs' ) Dépenses Loisirs
+        option(value='Dépenses Loisirs' ) Dépenses commodités
+        option(value='Dépenses Loisirs' ) Fumeur
+      button(id='selectbutton1' class="buttonStyle2" onclick="addData('Personnalisation')") Add
+        
+      
+      h2 Matching
+      div(id='Matching')
+        button(id="4" class="buttonStyle2" onclick="authorize(4,1,4)" value="Personnel") Compétences
+        button(id="5" class="buttonStyle2" onclick="authorize(5,1,3)" value="Personnel") Localisation
+      select(id='MatchingSelect' class="buttonStyle2" name ='Data')
+          option(value='Religion' selected=true) Religion
+          option(value='Localisation' ) Localisation
+          option(value='Hobbies' ) Hobbies
+          option(value='Situation familiale' ) Situation familiale
+          option(value='Achats' ) Achats
+          option(value='Emplois précédents' ) Emplois précédents
+          option(value='Habitutdes alimentaires' ) Habitutdes alimentaires
+          option(value='Salaires' ) Salaire
+          option(value='Emplois précédents' ) Emplois précédents
+          option(value="Nombre d'enfants" ) Nombre d'enfants
+          option(value='Poids' ) Poids
+          option(value='Sports' ) Sports
+          option(value='Politique' ) Politique
+          option(value='Dépenses Loisirs' ) Dépenses Loisirs
+          option(value='Dépenses Loisirs' ) Dépenses commodités
+          option(value='Dépenses Loisirs' ) Fumeur
+      
+      button(id='selectbutton2' class="buttonStyle2" onclick='addData("Matching")') Add
+      h2 Publicite
+      div(id='Publicite')
+        button(id="6" class="buttonStyle2" onclick="authorize(6,2,1)" value="Personnel") Age
+        button(id="7" class="buttonStyle2" onclick="authorize(7,2,2)" value="Personnel") Sexe
+        button(id="8" class="buttonStyle2" onclick="authorize(8,2,10)" value="Personnel") Demandes
+        button(id="9" class="buttonStyle2" onclick="authorize(9,2,7)" value="Personnel") Personnalité
+      select(id ='PubliciteSelect' class="buttonStyle2" name ='Data')
+          option(value='Religion' selected=true) Religion
+          option(value='Localisation' ) Localisation
+          option(value='Hobbies' ) Hobbies
+          option(value='Situation familiale' ) Situation familiale
+          option(value='Achats' ) Achats
+          option(value='Emplois précédents' ) Emplois précédents
+          option(value='Habitutdes alimentaires' ) Habitutdes alimentaires
+          option(value='Salaires' ) Salaire
+          option(value='Emplois précédents' ) Emplois précédents
+          option(value="Nombre d'enfants" ) Nombre d'enfants
+          option(value='Poids' ) Poids
+          option(value='Sports' ) Sports
+          option(value='Politique' ) Politique
+          option(value='Dépenses Loisirs' ) Dépenses Loisirs
+          option(value='Dépenses commodites' ) Dépenses commodités
+          option(value='Fumeur' ) Fumeur
+      button(id='selectbutton2' class="buttonStyle2" onclick='addData("Publicite")') Add
+      h2 Statistiques
+      div(id='Statistiques')
+        button(id="10" class="buttonStyle2" onclick="authorize(10,3,11)" value="Personnel") Navigation
+        button(id="11" class="buttonStyle2" onclick="authorize(11,3,1)" value="Personnel") Age
+        button(id="12" class="buttonStyle2" onclick="authorize(12;3,2)" value="Personnel") Sexe
+        button(id="13" class="buttonStyle2" onclick="authorize(13,3,5)" value="Personnel") Objectifs
+        button(id="14" class="buttonStyle2" onclick="authorize(14,3,9)" value="Personnel") Profils favoris
+      select(id='StatistiquesSelect' class="buttonStyle2" name ='Data')
+          option(value='Religion' selected=true) Religion
+          option(value='Localisation' ) Localisation
+          option(value='Hobbies' ) Hobbies
+          option(value='Situation familiale' ) Situation familiale
+          option(value='Achats' ) Achats
+          option(value='Emplois précédents' ) Emplois précédents
+          option(value='Habitutdes alimentaires' ) Habitutdes alimentaires
+          option(value='Salaires' ) Salaire
+          option(value='Emplois précédents' ) Emplois précédents
+          option(value="Nombre d'enfants" ) Nombre d'enfants
+          option(value='Poids' ) Poids
+          option(value='Sports' ) Sports
+          option(value='Politique' ) Politique
+          option(value='Dépenses Loisirs' ) Dépenses Loisirs
+          option(value='Dépenses commodites' ) Dépenses commodités
+          option(value='Fumeur' ) Fumeur
+      button(id='selectbutton3' class="buttonStyle2" onclick='addData("Publicite")') Add
+      h2 Recherche
+      div(id='Recherche')
+        button(id="15" class="buttonStyle2" onclick="authorize(15,4,0)" value="Personnel") Nom
+        button(id="16" class="buttonStyle2" onclick="authorize(16,4,4)" value="Personnel") Compétences
+        button(id="17" class="buttonStyle2" onclick="authorize(17,4,3)" value="Personnel") Localisation
+        button(id="18" class="buttonStyle2" onclick="authorize(18,4,6)" value="Personnel") Profession
+      select(id='RechercheSelect' class="buttonStyle2" name ='Data')
+          option(value='Religion' selected=true) Religion
+          option(value='Localisation' ) Localisation
+          option(value='Hobbies' ) Hobbies
+          option(value='Situation familiale' ) Situation familiale
+          option(value='Achats' ) Achats
+          option(value='Emplois précédents' ) Emplois précédents
+          option(value='Habitutdes alimentaires' ) Habitutdes alimentaires
+          option(value='Salaires' ) Salaire
+          option(value='Emplois précédents' ) Emplois précédents
+          option(value="Nombre d'enfants" ) Nombre d'enfants
+          option(value='Poids' ) Poids
+          option(value='Sports' ) Sports
+          option(value='Politique' ) Politique
+          option(value='Dépenses Loisirs' ) Dépenses Loisirs
+          option(value='Dépenses commodites' ) Dépenses commodités
+          option(value='Fumeur' ) Fumeur
+      button(id='selectbutton1' class="buttonStyle2" onclick='addData("Recherche")') Add
+      
+            
+      h2 Ajoutez un traitement
+      p(class="center") Traitement
+      input(class='center' id='purposeName' type='text' name='purposeName')
+      p(class="center") Donnée 1
+      select(id='PersonnalisationSelect' class="buttonStyle2" name ='Data')
+        option(value='Religion' selected=true) Religion
+        option(value='Localisation' ) Localisation
+        option(value='Hobbies' ) Hobbies
+        option(value='Situation familiale' ) Situation familiale
+        option(value='Achats' ) Achats
+        option(value='Emplois précédents' ) Emplois précédents
+        option(value='Habitutdes alimentaires' ) Habitutdes alimentaires
+        option(value='Salaires' ) Salaire
+        option(value='Emplois précédents' ) Emplois précédents
+        option(value="Nombre d'enfants" ) Nombre d'enfants
+        option(value='Poids' ) Poids
+        option(value='Sports' ) Sports
+        option(value='Politique' ) Politique
+        option(value='Dépenses Loisirs' ) Dépenses Loisirs
+        option(value='Dépenses commodites' ) Dépenses commodités
+        option(value='Fumeur' ) Fumeur
+      p(class="center") Donnée 2
+      select(id='PersonnalisationSelect' class="buttonStyle2" name ='Data')
+        option(value='Religion' selected=true) Religion
+        option(value='Localisation' ) Localisation
+        option(value='Hobbies' ) Hobbies
+        option(value='Situation familiale' ) Situation familiale
+        option(value='Achats' ) Achats
+        option(value='Emplois précédents' ) Emplois précédents
+        option(value='Habitutdes alimentaires' ) Habitutdes alimentaires
+        option(value='Salaires' ) Salaire
+        option(value='Emplois précédents' ) Emplois précédents
+        option(value="Nombre d'enfants" ) Nombre d'enfants
+        option(value='Poids' ) Poids
+        option(value='Sports' ) Sports
+        option(value='Politique' ) Politique
+        option(value='Dépenses Loisirs' ) Dépenses Loisirs
+        option(value='Dépenses commodites' ) Dépenses commodités
+        option(value='Fumeur' ) Fumeur
+      p(class="center") Donnée 3
+      select(id='PersonnalisationSelect' class="buttonStyle2" name ='Data')
+        option(value='Religion' selected=true) Religion
+        option(value='Localisation' ) Localisation
+        option(value='Hobbies' ) Hobbies
+        option(value='Situation familiale' ) Situation familiale
+        option(value='Achats' ) Achats
+        option(value='Emplois précédents' ) Emplois précédents
+        option(value='Habitutdes alimentaires' ) Habitutdes alimentaires
+        option(value='Salaires' ) Salaire
+        option(value='Emplois précédents' ) Emplois précédents
+        option(value="Nombre d'enfants" ) Nombre d'enfants
+        option(value='Poids' ) Poids
+        option(value='Sports' ) Sports
+        option(value='Politique' ) Politique
+        option(value='Dépenses Loisirs' ) Dépenses Loisirs
+        option(value='Dépenses commodites' ) Dépenses commodités
+        option(value='Fumeur' ) Fumeur
+      p(class="center") Donnée 4
+      select(id='PersonnalisationSelect' class="buttonStyle2" name ='Data')
+        option(value='Religion' selected=true) Religion
+        option(value='Localisation' ) Localisation
+        option(value='Hobbies' ) Hobbies
+        option(value='Situation familiale' ) Situation familiale
+        option(value='Achats' ) Achats
+        option(value='Emplois précédents' ) Emplois précédents
+        option(value='Habitutdes alimentaires' ) Habitutdes alimentaires
+        option(value='Salaires' ) Salaire
+        option(value='Emplois précédents' ) Emplois précédents
+        option(value="Nombre d'enfants" ) Nombre d'enfants
+        option(value='Poids' ) Poids
+        option(value='Sports' ) Sports
+        option(value='Politique' ) Politique
+        option(value='Dépenses Loisirs' ) Dépenses Loisirs
+        option(value='Dépenses commodites' ) Dépenses commodités
+        option(value='Fumeur' ) Fumeur
+      
+        
+      
+      button(id='selectbutton1' class="buttonStyle2" onclick="addData('perso')") Add
+      
+      h2 Vos traitements et utilisations
+      div(id='statsUsage')
+      
+
+    
+    
+  script.
+    
+        function addData(id){
+          var data = document.getElementById(id+'Select').value;
+          var x = document.createElement("BUTTON");
+          x.className = 'buttonStyle2';
+          x.id = parseInt(document.getElementById(id).lastChild.id) +1
+          x.onclick= "authorize("+x.id+",0,5)";
+          x.value="Personnel";
+          var t = document.createTextNode(data);
+          x.appendChild(t);
+          document.getElementById(id).appendChild(x);
+          
+          var p = document.createElement("p");
+          var txt = document.createTextNode(id +" : " + data + " : " + "0%");
+          document.getElementById('statsUsage').appendChild(p).appendChild(txt);
+          
+          
+        }
+        function deleteData(id,dataId){
+          var data = document.getElementById(id+'Select').value;
+          data.removeChild(data.lastChild)
+        }
+        
+        // ------------------- TO COMPLETE ---------------------------------------
+        function addPurpose(name){
+          purpose = document.createElement('h2')
+          purpose.appendChild(document.createTextNode('name'))
+          document.getElementById('purposes').appendChild(purpose)
+          purDiv = document.createElement('div')
+          purDiv.id = name.substr(0,5)
+          document.getElementById('purposes').appendChild(purDiv)
+          selectData = document.createElement('select')
+          selectData.id = purDiv.id+'Select'
+          selectData.class='buttonStyle2'
+          //opnion 1 Religion
+          option = document.createElement('option')
+          option.value='Religion'
+          option.innerHTML = 'Religion'
+          //option 2 Location 
+          option1 = document.createElement('option')
+          option1.value='Localisation'
+          option1.innerHTML = 'Localisation'
+          document.getElementById('purpose').appendChild();
+          var x = document.createElement("BUTTON");
+          x.className = 'buttonStyle2';
+          x.id = parseInt(document.getElementById('perso').lastChild.id) +1
+          x.onclick= "authorize("+x.id+",0,5)";
+          x.value="Personnel";
+          var t = document.createTextNode(data);
+          x.appendChild(t);
+          document.getElementById(id).appendChild(x);e
+        }
+        function deleteData(id,dataId){
+          var data = document.getElementById(id+'Select').value;
+          data.removeChild(data.lastChild)
+        }
+        
+        function authorize(id, purpose, data){
+            
+            if($('#'+id).attr("class") === "buttonStyle" || $('#'+id).attr("class") === "buttonStyle2" ) {
+                $('#'+id).removeClass("buttonStyle").addClass('button-clicked')
+                
+            $.post({
+            url: 'https://visions-data.herokuapp.com/set',
+            data:JSON.stringify({purpose: purpose, data : data
+            }),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+    
+          })
+          
+    
+               }
+              else {
+                  $('#'+id).removeClass("button-clicked").addClass("buttonStyle")
+                    
+                    
+            $.post({
+            url: 'https://visions-data.herokuapp.com/set',
+            data:JSON.stringify({purpose: purpose, data : data, remove : true
+            }),
+            dataType:'json',
+            contentType:'application/json',
+            success(response){
+             
+            },
+            error(jqXHR, status, errorThrown){console.log(jqXHR)}
+    
+          })
+              }
+              
+              
+            }
+    

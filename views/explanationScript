@@ -1,0 +1,136 @@
+function showExplanation(purpose){
+         if(purpose=='personnalisation'){
+            document.getElementById("explicationPersonnalisation").style.display = "block";
+            document.getElementById('matching').style.opacity = 0;
+            document.getElementById('publicite').style.opacity = 0;
+            document.getElementById('statistiques').style.opacity = 0;
+            document.getElementById('recherche').style.opacity = 0;
+    
+            
+            document.getElementById('matchingLabel').style.opacity = 0;
+            document.getElementById('pubLabel').style.opacity = 0;
+            document.getElementById('etudesLabel').style.opacity = 0;
+            document.getElementById('rechercheLabel').style.opacity = 0;
+            document.getElementById('personnalisation').setAttribute('onclick', "hideExplanation('personnalisation')")
+         }
+         if(purpose=='matching'){
+            document.getElementById("explicationMatching").style.display = "block";
+            document.getElementById('personnalisation').style.opacity = 0;
+            document.getElementById('publicite').style.opacity = 0;
+            document.getElementById('statistiques').style.opacity = 0;
+            document.getElementById('recherche').style.opacity = 0;
+            
+            document.getElementById('newsfeedLabel').style.opacity = 0;
+            document.getElementById('pubLabel').style.opacity = 0;
+            document.getElementById('etudesLabel').style.opacity = 0;
+            document.getElementById('rechercheLabel').style.opacity = 0;
+            document.getElementById('matching').setAttribute('onclick', "hideExplanation('matching')")
+         }         
+         if(purpose=='publicite'){
+            document.getElementById("explicationPublicite").style.display = "block";
+            document.getElementById('personnalisation').style.opacity = 0;
+            document.getElementById('matching').style.opacity = 0;
+            document.getElementById('statistiques').style.opacity = 0;
+            document.getElementById('recherche').style.opacity = 0;
+            
+            document.getElementById('matchingLabel').style.opacity = 0;
+            document.getElementById('newsfeedLabel').style.opacity = 0;
+            document.getElementById('etudesLabel').style.opacity = 0;
+            document.getElementById('rechercheLabel').style.opacity = 0;
+            document.getElementById('publicite').setAttribute('onclick', "hideExplanation('publicite')")
+         }
+         if(purpose=='statistiques'){
+            document.getElementById("explicationStatistiques").style.display = "block";
+            document.getElementById('personnalisation').style.opacity = 0;
+            document.getElementById('publicite').style.opacity = 0;
+            document.getElementById('matching').style.opacity = 0;
+            document.getElementById('recherche').style.opacity = 0;
+            
+            document.getElementById('matchingLabel').style.opacity = 0;
+            document.getElementById('pubLabel').style.opacity = 0;
+            document.getElementById('newsfeedLabel').style.opacity = 0;
+            document.getElementById('rechercheLabel').style.opacity = 0;
+            document.getElementById('statistiques').setAttribute('onclick', "hideExplanation('statistiques')")
+         }
+         if(purpose=='recherche'){
+            document.getElementById("explicationRecherche").style.display = "block";
+            document.getElementById('personnalisation').style.opacity = 0;
+            document.getElementById('publicite').style.opacity = 0;
+            document.getElementById('statistiques').style.opacity = 0;
+            document.getElementById('matching').style.opacity = 0;
+            
+            document.getElementById('matchingLabel').style.opacity = 0;
+            document.getElementById('pubLabel').style.opacity = 0;
+            document.getElementById('etudesLabel').style.opacity = 0;
+            document.getElementById('newsfeedLabel').style.opacity = 0;
+            document.getElementById('recherche').setAttribute('onclick', "hideExplanation('recherche')")
+         } 
+        }
+
+        function hideExplanation(purpose){
+         if(purpose=='personnalisation'){
+            document.getElementById("explicationPersonnalisation").style.display = "none";
+            document.getElementById('matching').style.opacity = 1;
+            document.getElementById('publicite').style.opacity = 1;
+            document.getElementById('statistiques').style.opacity = 1;
+            document.getElementById('recherche').style.opacity = 1;
+            
+            document.getElementById('matchingLabel').style.opacity = 1;
+            document.getElementById('pubLabel').style.opacity = 1;
+            document.getElementById('etudesLabel').style.opacity = 1;
+            document.getElementById('rechercheLabel').style.opacity = 1;
+            document.getElementById('personnalisation').setAttribute('onclick', "showExplanation('personnalisation')")
+         }
+         if(purpose=='matching'){
+            document.getElementById("explicationMatching").style.display = "none";
+            document.getElementById('personnalisation').style.opacity = 1;
+            document.getElementById('publicite').style.opacity = 1;
+            document.getElementById('statistiques').style.opacity = 1;
+            document.getElementById('recherche').style.opacity = 1;
+            
+            document.getElementById('newsfeedLabel').style.opacity = 1;
+            document.getElementById('pubLabel').style.opacity = 1;
+            document.getElementById('etudesLabel').style.opacity = 1;
+            document.getElementById('rechercheLabel').style.opacity = 1;
+            document.getElementById('matching').setAttribute('onclick', "showExplanation('matching')")
+         }         
+         if(purpose=='publicite'){
+            document.getElementById("explicationPublicite").style.display = "none";
+            document.getElementById('personnalisation').style.opacity = 1;
+            document.getElementById('matching').style.opacity = 1;
+            document.getElementById('statistiques').style.opacity = 1;
+            document.getElementById('recherche').style.opacity = 1;
+            
+            document.getElementById('matchingLabel').style.opacity = 1;
+            document.getElementById('newsfeedLabel').style.opacity = 1;
+            document.getElementById('etudesLabel').style.opacity = 1;
+            document.getElementById('rechercheLabel').style.opacity = 1;
+            document.getElementById('publicite').setAttribute('onclick', "showExplanation('publicite')")
+         }
+         if(purpose=='statistiques'){
+            document.getElementById("explicationStatistiques").style.display = "none";
+            document.getElementById('personnalisation').style.opacity = 1;
+            document.getElementById('publicite').style.opacity = 1;
+            document.getElementById('matching').style.opacity = 1;
+            document.getElementById('recherche').style.opacity = 1;
+            
+            document.getElementById('matchingLabel').style.opacity = 1;
+            document.getElementById('pubLabel').style.opacity = 1;
+            document.getElementById('newsfeedLabel').style.opacity = 1;
+            document.getElementById('rechercheLabel').style.opacity = 1;
+            document.getElementById('statistiques').setAttribute('onclick', "showExplanation('statistiques')")
+         }
+         if(purpose=='recherche'){
+            document.getElementById("explicationRecherche").style.display = "none";
+            document.getElementById('personnalisation').style.opacity = 1;
+            document.getElementById('publicite').style.opacity = 1;
+            document.getElementById('statistiques').style.opacity = 1;
+            document.getElementById('matching').style.opacity = 1;
+            
+            document.getElementById('matchingLabel').style.opacity = 1;
+            document.getElementById('pubLabel').style.opacity = 1;
+            document.getElementById('etudesLabel').style.opacity = 1;
+            document.getElementById('newsfeedLabel').style.opacity = 1;
+            document.getElementById('recherche').setAttribute('onclick', "showExplanation('recherche')")
+         } 
+        }
