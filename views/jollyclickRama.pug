@@ -9,13 +9,11 @@ html(lang="en")
 
   body(class ="jollyclick")
     script.
-
-        
           
         function authorize(id, purpose, data){
             
-            if($('#'+id).attr("class") === "buttonStyle" || $('#'+id).attr("class") === "buttonStyle2" ) {
-                $('#'+id).removeClass("buttonStyle").addClass('button-clicked')
+            if($('#'+id).attr("class") === "buttonStyle2 btn btn-primary btn-lg" || $('#'+id).attr("class") === "btn btn-primary btn-lg buttonStyle2" ) {
+                $('#'+id).removeClass("buttonStyle2").addClass('buttonStyle2-clicked')
                 
             $.post({
             url: 'https://visions-data.herokuapp.com/set',
@@ -33,7 +31,7 @@ html(lang="en")
     
                }
               else {
-                  $('#'+id).removeClass("button-clicked").addClass("buttonStyle")
+                  $('#'+id).removeClass("buttonStyle2-clicked").addClass("buttonStyle2")
                     
                     
             $.post({
@@ -57,14 +55,16 @@ html(lang="en")
          if(purpose=='personnalisation'){
             $('#personnalisation').addClass('carrePurpose-active');
             $('#explicationPersonnalisation').addClass('carreExplication-active');
-            
+            $('#matching').addClass('carrePurpose-inactive');
+            $('#statistiques').addClass('carrePurpose-inactive');
+            $('#publicite').addClass('carrePurpose-inactive');
+            $('#recherche').addClass('carrePurpose-inactive');
             
             document.getElementById('publicite').style.opacity = 0;
             document.getElementById('matching').style.opacity = 0;
             document.getElementById('statistiques').style.opacity = 0;
             document.getElementById('recherche').style.opacity = 0;
     
-            
             document.getElementById('matchingLabel').style.opacity = 0;
             document.getElementById('pubLabel').style.opacity = 0;
             document.getElementById('etudesLabel').style.opacity = 0;
@@ -75,6 +75,10 @@ html(lang="en")
          
             $('#matching').addClass('carrePurpose-active');
             $('#explicationMatching').addClass('carreExplication-active');
+            $('#personnalisation').addClass('carrePurpose-inactive');
+            $('#statistiques').addClass('carrePurpose-inactive');
+            $('#publicite').addClass('carrePurpose-inactive');
+            $('#recherche').addClass('carrePurpose-inactive');
             
             document.getElementById('personnalisation').style.opacity = 0;
             document.getElementById('publicite').style.opacity = 0;
@@ -91,8 +95,11 @@ html(lang="en")
          if(purpose=='publicite'){
             $('#publicite').addClass('carrePurpose-active');
             $('#explicationPublicite').addClass('carreExplication-active');
-            
-            
+            $('#matching').addClass('carrePurpose-inactive');
+            $('#statistiques').addClass('carrePurpose-inactive');
+            $('#personnalisation').addClass('carrePurpose-inactive');
+            $('#recherche').addClass('carrePurpose-inactive');
+        
             document.getElementById('personnalisation').style.opacity = 0;
             document.getElementById('matching').style.opacity = 0;
             document.getElementById('statistiques').style.opacity = 0;
@@ -103,10 +110,15 @@ html(lang="en")
             document.getElementById('etudesLabel').style.opacity = 0;
             document.getElementById('rechercheLabel').style.opacity = 0;
             document.getElementById('publicite').setAttribute('onclick', "hideExplanation('publicite')")
-         }
+        
+            }
          if(purpose=='statistiques'){
             $('#statistiques').addClass('carrePurpose-active');
             $('#explicationStatistiques').addClass('carreExplication-active');
+            $('#matching').addClass('carrePurpose-inactive');
+            $('#personnalisation').addClass('carrePurpose-inactive');
+            $('#publicite').addClass('carrePurpose-inactive');
+            $('#recherche').addClass('carrePurpose-inactive');
             
             document.getElementById('personnalisation').style.opacity = 0;
             document.getElementById('publicite').style.opacity = 0;
@@ -123,8 +135,13 @@ html(lang="en")
          
             $('#recherche').addClass('carrePurpose-active');
             $('#explicationRecherche').addClass('carreExplication-active');
+            $('#matching').addClass('carrePurpose-inactive');
+            $('#statistiques').addClass('carrePurpose-inactive');
+            $('#publicite').addClass('carrePurpose-inactive');
+            $('#personnalisation').addClass('carrePurpose-inactive');
             
-            document.getElementById("explicationRecherche").style.display = "block";
+            
+          
             document.getElementById('personnalisation').style.opacity = 0;
             document.getElementById('publicite').style.opacity = 0;
             document.getElementById('statistiques').style.opacity = 0;
@@ -140,8 +157,14 @@ html(lang="en")
 
         function hideExplanation(purpose){
          if(purpose=='personnalisation'){
+         
             $('#personnalisation').removeClass('carrePurpose-active');
             $('#explicationPersonnalisation').removeClass('carreExplication-active');
+            $('#matching').removeClass('carrePurpose-inactive');
+            $('#statistiques').removeClass('carrePurpose-inactive');
+            $('#publicite').removeClass('carrePurpose-inactive');
+            $('#recherche').removeClass('carrePurpose-inactive');
+            
             document.getElementById('matching').style.opacity = 1;
             document.getElementById('publicite').style.opacity = 1;
             document.getElementById('statistiques').style.opacity = 1;
@@ -157,7 +180,11 @@ html(lang="en")
          
             $('#matching').removeClass('carrePurpose-active');
             $('#explicationMatching').removeClass('carreExplication-active');
-            
+            $('#personnalisation').removeClass('carrePurpose-inactive');
+            $('#statistiques').removeClass('carrePurpose-inactive');
+            $('#publicite').removeClass('carrePurpose-inactive');
+            $('#recherche').removeClass('carrePurpose-inactive');
+
             document.getElementById('personnalisation').style.opacity = 1;
             document.getElementById('publicite').style.opacity = 1;
             document.getElementById('statistiques').style.opacity = 1;
@@ -172,6 +199,10 @@ html(lang="en")
          if(purpose=='publicite'){
             $('#publicite').removeClass('carrePurpose-active');
             $('#explicationPublicite').removeClass('carreExplication-active');
+            $('#matching').removeClass('carrePurpose-inactive');
+            $('#statistiques').removeClass('carrePurpose-inactive');
+            $('#personnalisation').removeClass('carrePurpose-inactive');
+            $('#recherche').removeClass('carrePurpose-inactive');
             
             document.getElementById('personnalisation').style.opacity = 1;
             document.getElementById('matching').style.opacity = 1;
@@ -187,6 +218,10 @@ html(lang="en")
          if(purpose=='statistiques'){
             $('#statistiques').removeClass('carrePurpose-active');
             $('#explicationStatistiques').removeClass('carreExplication-active');
+            $('#matching').removeClass('carrePurpose-inactive');
+            $('#personnalisation').removeClass('carrePurpose-inactive');
+            $('#publicite').removeClass('carrePurpose-inactive');
+            $('#recherche').removeClass('carrePurpose-inactive');
             
             document.getElementById('personnalisation').style.opacity = 1;
             document.getElementById('publicite').style.opacity = 1;
@@ -200,10 +235,14 @@ html(lang="en")
             document.getElementById('statistiques').setAttribute('onclick', "showExplanation('statistiques')")
          }
          if(purpose=='recherche'){
-            $('#recherche').addClass('carrePurpose-active');
-            $('#explicationRecherche').addClass('carreExplication-active');
+            $('#recherche').removeClass('carrePurpose-active');
+            $('#explicationRecherche').removeClass('carreExplication-active');
+            $('#matching').removeClass('carrePurpose-inactive');
+            $('#statistiques').removeClass('carrePurpose-inactive');
+            $('#publicite').removeClass('carrePurpose-inactive');
+            $('#personnalisation').removeClass('carrePurpose-inactive');
                 
-            document.getElementById("explicationRecherche").style.display = "none";
+        
             document.getElementById('personnalisation').style.opacity = 1;
             document.getElementById('publicite').style.opacity = 1;
             document.getElementById('statistiques').style.opacity = 1;
